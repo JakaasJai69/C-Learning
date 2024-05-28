@@ -7,7 +7,7 @@
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
-                "-std=c++23"                  //language standard C++23
+                "-std=c++23",                  //language standard C++23
                 "${file}",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"
