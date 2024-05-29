@@ -31,6 +31,12 @@
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
+                "-pedantic-errors",  //for disabling extensions
+                "-Wall",             //for increasing debugging lvls
+                "-Weffc++",          //*
+                "-Wextra",           //*
+                "-Wconversion",      //*
+                "-Wsign-conversion", // till here
                 "${file}",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"

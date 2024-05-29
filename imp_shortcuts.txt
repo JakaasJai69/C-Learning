@@ -1,0 +1,4 @@
+ctrl + shift + L : select all similar word which were selected while inputting shortcut.
+
+ctrl + K + U: uncomment the selected lines
+ctrl + K + C: comment the seleted lines
