@@ -85,21 +85,54 @@ int inputAsk()
 
 }
 
-int main(){
-    
-    // integerInOut();
-    // initVarOut();
-
+//Asks for integed input and outputs double and triple of it.
+int askIntOutDoubleTriple()
+{
     //asking for input
-    std::cout << "Please input a Integer to double: \n";
+    std::cout  << "Please input a Integer to double/triple: \n";
     
     //storing input
     int inputVal {inputAsk()};
 
     //Print the Double output
-    std::cout  << "The Double value of input is:" << doubleCalc(inputVal);
+    std::cout  << "The Double value of " << inputVal << " is: " << inputVal * 2
+               << "\n";
+
+    //Print tbe triple value
+    std::cout  << "The Triple value of " << inputVal << " is: " << inputVal * 3
+               << "\n";
+    return 0;
+}
+
+//Asks for twin inout and output the their sum and different 
+void twinIntCal()
+{
+    //asks and stores first integer in num1
+    std::cout << "Enter an integer: \n";
+    int num1 {};
+    num1 = inputAsk();
+
+    //asks and stores first integer in num2
+    std::cout << "Enter an integer Again: \n";
+    int num2 {};
+    num2 = inputAsk();
+ 
+    //Outputs their sum and diffence
+    std::cout << num1 << " - " << num2 << " : " << num1 - num2 << "\n"
+              << num1 << " - " << num2 << " : " << num1 - num2 << "\n";
+
+}
 
 
+int main()
+{
+    
+    // integerInOut();
+    // initVarOut();
+    //askIntOutDoubleTriple();
+    twinIntCal();
+
+    
     return 0;
 
 }
