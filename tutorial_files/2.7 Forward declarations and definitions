@@ -1,0 +1,27 @@
+1)A declaration tells the compiler about the existence of an identifier and its associated type information. Here are some examples of declarations:
+
+int add(int x, int y); // tells the compiler about a function named "add" that takes two int parameters and returns an int.  No body!
+int x;                 // tells the compiler about an integer variable named x
+
+2)A definition is a declaration that actually implements (for functions and types) or instantiates (for variables) the identifier.
+
+Here are some examples of definitions:
+
+int add(int x, int y) // implements function add()
+{
+    int z{ x + y };   // instantiates variable z
+
+    return z;
+}
+
+int x;                // instantiates variable x
+
+The one definition rule (ODR)
+
+The one definition rule (or ODR for short) is a well-known rule in C++. The ODR has three parts:
+
+    Within a file, each function, variable, type, or template in a given scope can only have one definition. Definitions occurring in different scopes (e.g. local variables defined inside different functions, or functions defined inside different namespaces) do not violate this rule.
+    
+    Within a program, each function or variable in a given scope can only have one definition. This rule exists because programs can have more than one file (we’ll cover this in the next lesson). Functions and variables not visible to the linker are excluded from this rule (discussed further in lesson 7.6 -- Internal linkage).
+
+    Types, templates, inline functions, and inline variables are allowed to have duplicate definitions in different files, so long as each definition is identical. We haven’t covered what most of these things are yet, so don’t worry about this for now -- we’ll bring it back up when it’s relevant.

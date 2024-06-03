@@ -42,7 +42,7 @@ void integerInOut()
 }
 
 //Test for different Types of initilizations.
-void initVarOut()
+void initVarOut() 
 {
     
     std::cout <<"Default Initilization:"     << "\n";
@@ -63,12 +63,6 @@ void initVarOut()
     std::cout <<"Value Initilization:"       << "\n";
     std::cout << f << "\n";
 
-}
-
-//calculates the double of the input argument and returns it
-int doubleCalc(int val)
-{
-    return 2 * val;
 }
 
 //asks for an inout and return it
@@ -118,23 +112,20 @@ void twinIntCal()
     num2 = inputAsk();
  
     //Outputs their sum and diffence
-    std::cout << num1 << " - " << num2 << " : " << num1 - num2 << "\n"
-              << num1 << " - " << num2 << " : " << num1 - num2 << "\n";
+    std::cout << num1 << " + " << num2 << " : " << num1 + num2 << ".\n"
+              << num1 << " - " << num2 << " : " << num1 - num2 << ".\n";
 
 }
-
 
 int main()
 {
     
-    // integerInOut();
-    // initVarOut();
-    //askIntOutDoubleTriple();
+    integerInOut();
+    initVarOut();
+    askIntOutDoubleTriple();
     twinIntCal();
-
+    std::cout << "It works";
     
     return 0;
 
 }
-
-

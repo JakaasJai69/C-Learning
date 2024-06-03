@@ -2,3 +2,9 @@ ctrl + shift + L : select all similar word which were selected while inputting s
 
 ctrl + K + U: uncomment the selected lines
 ctrl + K + C: comment the seleted lines
+
+Imp rules:
+ODR (One defination rule)
+DRY (Don't Repeat Yourself)
+WET (Write Everything Twice)
+
