@@ -1,0 +1,31 @@
+Preprocessor: the job of the preprocessor is to seek out directives and to substitute these directive declarations with whatever text they're associated with. This process is called a translation, and after it's done translating one file, it creates a translation unit. It passes this unit to the compiler which then processes it to create an object file. The object file then gets processed by the linker, which if I've understood correctly, combines one or more object files to then create the final program.
+
+Preprocessor Directives:
+ 
+ #include: copies the code of defined file in same folderor in 
+ case of standard lib adds the code defiend in file <file> located 
+ at standard lib. 
+
+ macros: It basically replaces the text in ways it is defined in the 
+ macro.Two types of macros:
+ object: #define SOMETHING "WITHSOMETHING"
+ there are also empty defines like #define SOMETHING. it replaces the word
+ with empty. 
+ functions: not recommanded
+
+conditional:
+if some macro diretive is defined it enables compilation for code inside
+#ifdef SOMETHING
+#endif
+
+and reverse for:
+#ifndef SOMETHING
+#endif
+
+for modern c++
+#if defined(SOMETHING)
+#endif
+
+#if !defined(SOMETHING)
+#endif
+
