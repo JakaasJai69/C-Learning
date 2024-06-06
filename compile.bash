@@ -1,0 +1,1 @@
+/usr/bin/g++ -fdiagnostics-color=always -g -std=c++23 -ggdb -Wall -Weffc++ -Wextra -Wconversion -Wsign-conversion -pedantic-errors -I/root/Projects/C-Learning/includes -Werror /root/Projects/C-Learning/main.cpp /root/Projects/C-Learning/test.cpp /root/Projects/C-Learning/trans_includes.cpp -o main.out
