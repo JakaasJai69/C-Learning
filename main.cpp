@@ -1,12 +1,25 @@
 #include <iostream>
-#include "test.h"
-#include "trans_includes.h"
+#include <mainCalc.h>
+#include <mainHello.h>
 
 int main()
 {
-    std::cout << "Does it work:\n";
-    test();
-    std::cout << "Does transitive includes work:\n";
-    trans_includes();
-    std::cout << "I did a edit in termux.\n";
+  std::cout << "Enter the functionality you want:\n"
+            << "1) Calculator (input 1 for first and so on)\n"
+            << "2) Hello Program\n";
+  
+  int execFunc{};
+  std::cin >> execFunc;
+  
+  switch(execFunc)
+  {
+    case 1:
+      execCalc();
+      break;
+    
+    case 2:
+      execHello();
+      break;
+  }
+  return 0;
 }
