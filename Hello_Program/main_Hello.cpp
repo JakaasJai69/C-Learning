@@ -1,4 +1,4 @@
-#define DEBUG 
+// #define DEBUG 
 //uncomment for debug build
 #include <iostream>
 #include <main_Hello.h>

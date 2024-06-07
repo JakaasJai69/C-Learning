@@ -50,19 +50,29 @@ done
 chmod -R a+rwx $rootPath
 echo "setting appropriate permissions"
 
-if [ $projectN = "1" ]
+if [ "$projectN" == "1" ]
 then
     echo "Do you want to compile main? (y or n)"
     read compileMain
-
-    if [ "$compileMain" = "y" ]
+    if [ "$compileMain" == "y" ] && [ "$debug" == "y" ]
     then
         /usr/bin/g++ -fdiagnostics-color=always -g -std=c++23 -ggdb -Wall -Weffc++ -Wextra -Wconversion -Wsign-conversion -pedantic-errors -I/root/Projects/C-Learning/includes -Werror $filesPath -o main.out
         ./main.out
-    else
+    elif [ "$compileMain" == "n" ] && [ "$debug" == "y" ]
+    then
         echo "Input the relative name or pathname (without / as start) of file in Project:"
         read compileFile
         /usr/bin/g++ -fdiagnostics-color=always -g -std=c++23 -ggdb -Wall -Weffc++ -Wextra -Wconversion -Wsign-conversion -pedantic-errors -I/root/Projects/C-Learning/includes -Werror /root/Projects/C-Learning/$compileFile -o $(basename "$compileFile").out
+        ./$(basename "$compileFile").out
+    elif [ "$compileMain" == "y" ] && [ "$debug" == "n" ]
+    then
+        /usr/bin/g++ -fdiagnostics-color=always -g -std=c++23 -O2 -DNDEBUG -pedantic-errors -I/root/Projects/C-Learning/includes $filesPath -o main.out
+        ./main.out
+    elif [ "$compileMain" == "n" ] && [ "$debug" == "n" ]
+    then
+        echo "Input the relative name or pathname (without / as start) of file in Project:"
+        read compileFile
+        /usr/bin/g++ -fdiagnostics-color=always -g -std=c++23 -O2 -DNDEBUG -pedantic-errors -I/root/Projects/C-Learning/includes /root/Projects/C-Learning/$compileFile -o $(basename "$compileFile").out
         ./$(basename "$compileFile").out
     fi
 fi

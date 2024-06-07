@@ -1,4 +1,4 @@
-#define DEBUG 
+// #define DEBUG 
 //uncomment for debug build
 
 // This program prints the C++ language standard your compiler is currently using
