@@ -2,11 +2,7 @@
 // Freely redistributable, courtesy of learncpp.com (https://www.learncpp.com/cpp-tutorial/what-language-standard-is-my-compiler-using/)
 
 #include <iostream>
-
-const int numStandards = 7;
-// The C++26 stdCode is a placeholder since the exact code won't be determined until the standard is finalized
-const long stdCode[numStandards] = { 199711L, 201103L, 201402L, 201703L, 202002L, 202302L, 202612L};
-const char* stdName[numStandards] = { "Pre-C++11", "C++11", "C++14", "C++17", "C++20", "C++23", "C++26" };
+#include <main_LanguageStandardCheck.h>
 
 long getCPPStandard()
 {
@@ -24,8 +20,13 @@ long getCPPStandard()
 #endif
 }
 
-int main()
+int execLanguageStandardCheck()
 {
+  const int numStandards = 7;
+  // The C++26 stdCode is a placeholder since the exact code won't be determined until the standard is finalized
+  const long stdCode[numStandards] = { 199711L, 201103L, 201402L, 201703L, 202002L, 202302L, 202612L};
+  const char* stdName[numStandards] = { "Pre-C++11", "C++11", "C++14", "C++17", "C++20", "C++23", "C++26" };
+
     long standard = getCPPStandard();
 
     if (standard == -1)

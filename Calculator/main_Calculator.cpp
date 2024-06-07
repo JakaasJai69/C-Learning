@@ -1,8 +1,9 @@
 #include <iostream>
 #include <string>
+#include <main_Calculator.h>
 
 //A terminal based basic two input calculator.
-int execCalc()
+int execCalculator()
 {
   /* Steps:
   1) User gets prompted to input first number.
