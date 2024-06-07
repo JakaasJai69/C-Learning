@@ -1,11 +1,18 @@
 // This program prints the C++ language standard your compiler is currently using
 // Freely redistributable, courtesy of learncpp.com (https://www.learncpp.com/cpp-tutorial/what-language-standard-is-my-compiler-using/)
 
+#define DEBUG 
+//uncomment for debug build
 #include <iostream>
 #include <main_LanguageStandardCheck.h>
 
 long getCPPStandard()
 {
+  
+    #ifdef DEBUG
+    std::cerr << "[debug: getCPPStandard() is called.]\n";
+    #endif
+
     // Visual Studio is non-conforming in support for __cplusplus (unless you set a specific compiler flag, which you probably haven't)
     // In Visual Studio 2015 or newer we can use _MSVC_LANG instead
     // See https://devblogs.microsoft.com/cppblog/msvc-now-correctly-reports-__cplusplus/
@@ -22,10 +29,14 @@ long getCPPStandard()
 
 int execLanguageStandardCheck()
 {
-  const int numStandards = 7;
-  // The C++26 stdCode is a placeholder since the exact code won't be determined until the standard is finalized
-  const long stdCode[numStandards] = { 199711L, 201103L, 201402L, 201703L, 202002L, 202302L, 202612L};
-  const char* stdName[numStandards] = { "Pre-C++11", "C++11", "C++14", "C++17", "C++20", "C++23", "C++26" };
+    #ifdef DEBUG
+    std::cerr << "[debug: execLanguageStandardCheck() is called.]\n";
+    #endif
+
+    const int numStandards = 7;
+    // The C++26 stdCode is a placeholder since the exact code won't be determined until the standard is finalized
+    const long stdCode[numStandards] = { 199711L, 201103L, 201402L, 201703L, 202002L, 202302L, 202612L};
+    const char* stdName[numStandards] = { "Pre-C++11", "C++11", "C++14", "C++17", "C++20", "C++23", "C++26" };
 
     long standard = getCPPStandard();
 

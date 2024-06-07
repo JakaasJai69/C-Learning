@@ -1,0 +1,17 @@
+A general approach to debugging
+
+1) Once a problem has been identified, debugging 
+   the problem generally consists of six steps:
+
+2) Find the root cause of the problem (usually the 
+   line of code that’s not working).
+
+3) Ensure you understand why the issue is occurring.
+
+4) Determine how you’ll fix the issue.
+
+5) Repair the issue causing the problem.
+
+6) Retest to ensure the problem has been fixed.
+
+7) Retest to ensure no new problems have emerged.

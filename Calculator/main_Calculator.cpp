@@ -1,3 +1,5 @@
+#define DEBUG 
+//uncomment for debug build
 #include <iostream>
 #include <string>
 #include <main_Calculator.h>
@@ -5,6 +7,10 @@
 //A terminal based basic two input calculator.
 int execCalculator()
 {
+  #ifdef DEBUG
+  std::cerr << "[debug: execCalculator() is called.]\n";
+  #endif
+
   /* Steps:
   1) User gets prompted to input first number.
   2) User gets prompted to input Operation to be performed.
