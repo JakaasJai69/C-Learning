@@ -26,14 +26,14 @@ for file in $filesPath; do
         if [[ "$option" == "n" && "$first_line" != "// "* ]];
         then
             modified_line="// $first_line"
-            echo "op1"
+
         elif [[ "$option" == "y" && "$first_line" == "// "* ]];
         then
             modified_line="${first_line:3}"  # Remove the leading "//"
-            echo "op2"
+
         else
             modified_line="$first_line"
-            echo "same"
+
         fi
 
         # Update the file with the modified first line
@@ -47,7 +47,8 @@ for file in $filesPath; do
 done
 
 #set appropriate permissions
-chmod a+rwx $rootPath
+chmod -R a+rwx $rootPath
+echo "setting appropriate permissions"
 
 if [ $projectN = "1" ]
 then
