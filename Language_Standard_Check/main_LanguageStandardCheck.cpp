@@ -1,18 +1,15 @@
-// #define DEBUG 
-//uncomment for debug build
-
 // This program prints the C++ language standard your compiler is currently using
 // Freely redistributable, courtesy of learncpp.com (https://www.learncpp.com/cpp-tutorial/what-language-standard-is-my-compiler-using/)
 
 #include <iostream>
 #include <main_LanguageStandardCheck.h>
+#include <Common.h>
+
 
 long getCPPStandard()
 {
-  
-    #ifdef DEBUG
-    std::cerr << "[debug: getCPPStandard() is called.]\n";
-    #endif
+
+    PLOGD << "[debug: getCPPStandard() is called.]\n";
 
     // Visual Studio is non-conforming in support for __cplusplus (unless you set a specific compiler flag, which you probably haven't)
     // In Visual Studio 2015 or newer we can use _MSVC_LANG instead
@@ -30,9 +27,9 @@ long getCPPStandard()
 
 int execLanguageStandardCheck()
 {
-    #ifdef DEBUG
-    std::cerr << "[debug: execLanguageStandardCheck() is called.]\n";
-    #endif
+
+    PLOGD << "[debug: execLanguageStandardCheck() is called.]\n";
+
 
     const int numStandards = 7;
     // The C++26 stdCode is a placeholder since the exact code won't be determined until the standard is finalized

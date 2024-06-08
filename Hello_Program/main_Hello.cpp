@@ -1,13 +1,13 @@
-// #define DEBUG 
-//uncomment for debug build
 #include <iostream>
 #include <main_Hello.h>
+#include <Common.h>
+
 
 int execHello()
 {
-  #ifdef DEBUG
-  std::cerr << "[debug: execHello() is called.]\n";
-  #endif
+
+  PLOGD << "[debug: execHello() is called.]\n";
+
   
   std::cout << "Hello, world!\n";
   return 0;

@@ -1,16 +1,17 @@
-// #define DEBUG 
-//uncomment for debug build
-
 #include <iostream>
 #include <main_Calculator.h>
 #include <main_Hello.h>
 #include <main_LanguageStandardCheck.h>
+#include <Common.h>
 
 int main()
 {
-  #ifdef DEBUG
-  std::cerr << "[debug: main() is called.]\n";
-  #endif
+  
+  //logging init
+  // plog::none eliminates writing of most messages, essentially turning logging off
+  plog::init(plog::debug , "Logfile.txt");
+
+  PLOGD << "[debug: main() is called.]\n";
   
   std::cout << "Enter the functionality you want:\n"
             << "1) Calculator (input 1 for first and so on) \n"

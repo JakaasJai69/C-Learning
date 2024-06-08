@@ -3,8 +3,12 @@
 echo "Which project do you want to compile:"
 echo "1. C-Learning\n"
 read projectN
-rootPath="/root/Projects/C-Learning"
+
+rootPath="/home/JhakaasJai/Projects/C-Learning"
 filesPath="$rootPath/main.cpp $rootPath/Calculator/main_Calculator.cpp $rootPath/Hello_Program/main_Hello.cpp $rootPath/Language_Standard_Check/main_LanguageStandardCheck.cpp"
+debugOptions="-fdiagnostics-color=always -g -std=c++23 -ggdb -Wall -Weffc++ -Wextra -Wconversion -Wsign-conversion -pedantic-errors -Werror"
+nondebugOptions="-fdiagnostics-color=always -g -std=c++23 -O2 -DNDEBUG -pedantic-errors"
+includeDir="-I$rootPath/includes -I$rootPath/includes/Third_Party"
 
 # Check if the first argument is 'y' or 'n'
 echo "do you want a debug build (y or n):"
@@ -17,7 +21,10 @@ else
     exit 1
 fi
 
-for file in $filesPath; do
+#files to enable disable debug on first line.
+debugFiles="$rootPath/includes/Common.h"
+
+for file in $debugFiles; do
     if [[ -f "$file" ]]; then
         # Read the first line of the file
         first_line=$(head -n 1 "$file")
@@ -56,23 +63,23 @@ then
     read compileMain
     if [ "$compileMain" == "y" ] && [ "$debug" == "y" ]
     then
-        /usr/bin/g++ -fdiagnostics-color=always -g -std=c++23 -ggdb -Wall -Weffc++ -Wextra -Wconversion -Wsign-conversion -pedantic-errors -I/root/Projects/C-Learning/includes -Werror $filesPath -o main.out
+        /usr/bin/g++ $debugOptions $includeDir $filesPath -o main.out
         ./main.out
     elif [ "$compileMain" == "n" ] && [ "$debug" == "y" ]
     then
         echo "Input the relative name or pathname (without / as start) of file in Project:"
         read compileFile
-        /usr/bin/g++ -fdiagnostics-color=always -g -std=c++23 -ggdb -Wall -Weffc++ -Wextra -Wconversion -Wsign-conversion -pedantic-errors -I/root/Projects/C-Learning/includes -Werror /root/Projects/C-Learning/$compileFile -o $(basename "$compileFile").out
+        /usr/bin/g++ $debugOptions $includeDir $rootPath/$compileFile -o $(basename "$compileFile").out
         ./$(basename "$compileFile").out
     elif [ "$compileMain" == "y" ] && [ "$debug" == "n" ]
     then
-        /usr/bin/g++ -fdiagnostics-color=always -g -std=c++23 -O2 -DNDEBUG -pedantic-errors -I/root/Projects/C-Learning/includes $filesPath -o main.out
+        /usr/bin/g++ $nondebugOptions $includeDir $filesPath -o main.out
         ./main.out
     elif [ "$compileMain" == "n" ] && [ "$debug" == "n" ]
     then
         echo "Input the relative name or pathname (without / as start) of file in Project:"
         read compileFile
-        /usr/bin/g++ -fdiagnostics-color=always -g -std=c++23 -O2 -DNDEBUG -pedantic-errors -I/root/Projects/C-Learning/includes /root/Projects/C-Learning/$compileFile -o $(basename "$compileFile").out
+        /usr/bin/g++ $nondebugOptions $includeDir $rootPath/$compileFile -o $(basename "$compileFile").out
         ./$(basename "$compileFile").out
     fi
 fi
