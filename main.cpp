@@ -7,8 +7,7 @@
 int main()
 {
   
-  //logging init
-  // plog::none eliminates writing of most messages, essentially turning logging off
+  
   plog::init(plog::debug , "Logfile.txt");
 
   PLOGD << "[debug: main() is called.]\n";
