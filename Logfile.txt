@@ -8,3 +8,13 @@
 
 2024-06-08 11:19:03.782 DEBUG [7241] [execCalculator@11] [debug: execCalculator() is called.]
 
+2024-06-08 11:27:06.196 DEBUG [14394] [main@13] [debug: main() is called.]
+
+2024-06-08 11:27:37.572 DEBUG [14394] [execLanguageStandardCheck@31] [debug: execLanguageStandardCheck() is called.]
+
+2024-06-08 11:27:37.573 DEBUG [14394] [getCPPStandard@12] [debug: getCPPStandard() is called.]
+
+2024-06-08 11:58:55.629 DEBUG [8045] [main@13] [debug: main() is called.]
+
+2024-06-08 12:00:07.045 DEBUG [8045] [execCalculator@11] [debug: execCalculator() is called.]
+
