@@ -1,37 +1,15 @@
 #include <iostream>
-#include <main_Calculator.h>
-#include <main_Hello.h>
-#include <main_LanguageStandardCheck.h>
+#include <main_Functions.h>
 #include <Common.h>
 
 int main()
 {
   
-  
   plog::init(plog::debug , "Logfile.txt");
-
   PLOGD << "[debug: main() is called.]\n";
-  
-  std::cout << "Enter the functionality you want:\n"
-            << "1) Calculator (input 1 for first and so on) \n"
-            << "2) Hello Program \n"
-            << "3) Language Standard check \n";
-  
-  int execFunc{};
-  std::cin >> execFunc;
-  
-  switch(execFunc)
-  {
-    case 1:
-      execCalculator();
-      break;
-    
-    case 2:
-      execHello();
-      break;
-    case 3:
-      execLanguageStandardCheck();
-      break;
-  }
+
+  //selectFunction() returns a code for executeFuntion() to run the respective
+  // task
+  execFunction(selectFunction());
   return 0;
 }

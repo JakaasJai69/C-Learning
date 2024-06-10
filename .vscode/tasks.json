@@ -21,6 +21,7 @@
         "${fileDirname}/Calculator/main_Calculator.cpp",
         "${fileDirname}/Hello_Program/main_Hello.cpp",
         "${fileDirname}/Language_Standard_Check/main_LanguageStandardCheck.cpp",
+        "${fileDirname}/main_Functions.cpp",
         "-o",
         "${fileDirname}/${fileBasenameNoExtension}"
       ],
@@ -52,6 +53,7 @@
         "${fileDirname}/Calculator/main_Calculator.cpp",
         "${fileDirname}/Hello_Program/main_Hello.cpp",
         "${fileDirname}/Language_Standard_Check/main_LanguageStandardCheck.cpp",
+        "${fileDirname}/main_Functions.cpp",
         "-o",
         "${fileDirname}/${fileBasenameNoExtension}"
       ],
