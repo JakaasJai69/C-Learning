@@ -18,3 +18,41 @@
 
 2024-06-08 12:00:07.045 DEBUG [8045] [execCalculator@11] [debug: execCalculator() is called.]
 
+2024-06-10 14:22:03.123 DEBUG [12081] [main@13] [debug: main() is called.]
+
+2024-06-10 14:22:09.777 DEBUG [12081] [execLanguageStandardCheck@31] [debug: execLanguageStandardCheck() is called.]
+
+2024-06-10 14:22:09.777 DEBUG [12081] [getCPPStandard@12] [debug: getCPPStandard() is called.]
+
+2024-06-10 14:22:41.666 DEBUG [12696] [main@13] [debug: main() is called.]
+
+2024-06-10 14:22:45.692 DEBUG [12696] [execHello@9] [debug: execHello() is called.]
+
+2024-06-10 14:24:12.949 DEBUG [14235] [main@13] [debug: main() is called.]
+
+2024-06-10 14:24:15.317 DEBUG [14235] [execHello@9] [debug: execHello() is called.]
+
+2024-06-10 14:27:23.712 DEBUG [17198] [main@13] [debug: main() is called.]
+
+2024-06-10 14:27:24.883 DEBUG [17198] [execHello@9] [debug: execHello() is called.]
+
+2024-06-10 14:28:38.204 DEBUG [18273] [main@13] [debug: main() is called.]
+
+2024-06-10 14:28:39.952 DEBUG [18273] [execLanguageStandardCheck@31] [debug: execLanguageStandardCheck() is called.]
+
+2024-06-10 14:28:39.952 DEBUG [18273] [getCPPStandard@12] [debug: getCPPStandard() is called.]
+
+2024-06-10 14:28:54.027 DEBUG [18570] [main@13] [debug: main() is called.]
+
+2024-06-10 14:28:57.686 DEBUG [18570] [execLanguageStandardCheck@31] [debug: execLanguageStandardCheck() is called.]
+
+2024-06-10 14:28:57.686 DEBUG [18570] [getCPPStandard@12] [debug: getCPPStandard() is called.]
+
+2024-06-10 14:29:15.018 DEBUG [18939] [main@13] [debug: main() is called.]
+
+2024-06-10 14:31:06.547 DEBUG [20497] [main@13] [debug: main() is called.]
+
+2024-06-10 14:31:08.610 DEBUG [20497] [execLanguageStandardCheck@31] [debug: execLanguageStandardCheck() is called.]
+
+2024-06-10 14:31:08.610 DEBUG [20497] [getCPPStandard@12] [debug: getCPPStandard() is called.]
+
