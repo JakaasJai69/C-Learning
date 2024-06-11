@@ -19,7 +19,7 @@
         "-Werror",
         "${file}",
         "${file}/Programs/*",
-        "${fileDirname}/main_Functions.cpp",
+        "${fileDirname}/main_functions.cpp",
         "-o",
         "${fileDirname}/${fileBasenameNoExtension}"
       ],
@@ -49,7 +49,7 @@
         "-DNDEBUG",
         "${file}",
         "${file}/Programs/*",
-        "${fileDirname}/main_Functions.cpp",
+        "${fileDirname}/main_functions.cpp",
         "-o",
         "${fileDirname}/${fileBasenameNoExtension}.out"
       ],
