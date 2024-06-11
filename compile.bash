@@ -6,7 +6,7 @@ read projectNo
 
 if [ "projectNo" == "1" ]
 then
-    projectName="C-Learning"
+    $projectName="C-Learning"
 else
     echo "Invalid Project No."
 fi
