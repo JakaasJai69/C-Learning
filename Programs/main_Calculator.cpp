@@ -20,48 +20,47 @@ int execCalculator()
   5) exit
   */
   
-  std::cout << "Input your first Number: \n";
+  std::cout << "Input your Number: \n";
   double firstInput{};
   std::cin >> firstInput;
-
+  
   std::cout << "Input your Operator( '+' , '-' , '*' or '/' ): \n";
   std::string inOperator;
   std::cin >> inOperator;
-  
-  std::cout << "Input your second Number: \n";
-  double secondInput{};
-  std::cin >> secondInput;
+    
+  std::cout << "Input your Number: \n";
+  double nextInput{};
+  std::cin >> nextInput;
   
   double result {};
   switch( inOperator[0] )
   {
     case '+':
-      result = firstInput + secondInput;
+      result = firstInput + nextInput;
       break;
-    
+      
     case '-':
-      result = firstInput - secondInput;
+      result = firstInput - nextInput;
       break;
-    
+        
     case '*':
-      result = firstInput * secondInput;
+      result = firstInput * nextInput;
       break;
-    
+      
     case '/':
-      if (secondInput != 0)
+      if (nextInput != 0)
       {
-        result = firstInput / secondInput;
+        result = firstInput / nextInput;
         break;
       }
-        
       else
       {
         std::cout << "Denominator cannot be zero. \n";
         return 1;
       }
   }
-  
+
   std::cout << "Your Output is: \n" << firstInput << " " << inOperator << " " 
-            << secondInput << " = " << result << "\n";
+            << nextInput << " = " << result << "\n";
   return 0;
 }

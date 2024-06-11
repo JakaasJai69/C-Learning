@@ -1,12 +1,20 @@
 #!/bin/bash
 
 echo "Which project do you want to compile:"
-echo "1. C-Learning\n"
-read projectN
+echo "1. C-Learning (enter 1 for first and so on)"
+read projectNo
 
-rootPath="/home/JhakaasJai/Projects/C-Learning"
-filesPath="$rootPath/main.cpp $rootPath/Calculator/main_Calculator.cpp $rootPath/Hello_Program/main_Hello.cpp $rootPath/Language_Standard_Check/main_LanguageStandardCheck.cpp"
-debugOptions="-fdiagnostics-color=always -g -std=c++23 -ggdb -Wall -Weffc++ -Wextra -Wconversion -Wsign-conversion -pedantic-errors -Werror"
+if [ "projectNo" == "1" ]
+then
+    projectName="C-Learning"
+else
+    echo "Invalid Project No."
+fi
+
+rootPath="/root/Projects/$projectName"
+filesPath="$rootPath/main.cpp $rootPath/main_Functions.cpp $rootPath/Programs/*"
+echo "-Weffc++ has been removed because of plog"
+debugOptions="-fdiagnostics-color=always -g -std=c++23 -ggdb -Wall -Wextra -Wconversion -Wsign-conversion -pedantic-errors -Werror"
 nondebugOptions="-fdiagnostics-color=always -g -std=c++23 -O2 -DNDEBUG -pedantic-errors"
 includeDir="-I$rootPath/includes -I$rootPath/includes/Third_Party"
 
@@ -53,11 +61,8 @@ for file in $debugFiles; do
     fi
 done
 
-#set appropriate permissions
-chmod -R a+rwx $rootPath
-echo "setting appropriate permissions"
 
-if [ "$projectN" == "1" ]
+if [ "$projectNo" == "1" ]
 then
     echo "Do you want to compile main? (y or n)"
     read compileMain

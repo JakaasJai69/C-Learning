@@ -18,9 +18,7 @@
         "-I${fileDirname}/includes/Third_Party",
         "-Werror",
         "${file}",
-        "${fileDirname}/Calculator/main_Calculator.cpp",
-        "${fileDirname}/Hello_Program/main_Hello.cpp",
-        "${fileDirname}/Language_Standard_Check/main_LanguageStandardCheck.cpp",
+        "${file}/Programs/*",
         "${fileDirname}/main_Functions.cpp",
         "-o",
         "${fileDirname}/${fileBasenameNoExtension}"
@@ -50,12 +48,10 @@
         "-O2",
         "-DNDEBUG",
         "${file}",
-        "${fileDirname}/Calculator/main_Calculator.cpp",
-        "${fileDirname}/Hello_Program/main_Hello.cpp",
-        "${fileDirname}/Language_Standard_Check/main_LanguageStandardCheck.cpp",
+        "${file}/Programs/*",
         "${fileDirname}/main_Functions.cpp",
         "-o",
-        "${fileDirname}/${fileBasenameNoExtension}"
+        "${fileDirname}/${fileBasenameNoExtension}.out"
       ],
       "options": {
         "cwd": "${fileDirname}"

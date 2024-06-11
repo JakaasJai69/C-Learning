@@ -13,8 +13,9 @@ int selectFunction()
             << "1) Calculator (input 1 for first and so on) \n"
             << "2) Hello Program \n"
             << "3) Language Standard check \n";
-  
-  return std::cin
+  int x;
+  std::cin >> x;
+  return x;
 }
 
 //Input: It takes code from selectFunction() to run respective task.
@@ -34,5 +35,5 @@ int execFunction(int execCode)
       execLanguageStandardCheck();
       break;
   }
-  return 0
+  return 0;
 }
