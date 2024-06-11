@@ -76,21 +76,32 @@ then
         ./main.out
     elif [ "$compileMain" == "n" ] && [ "$debug" == "y" ]
     then
-        echo "Input the single or multiple relative filenames separated by space(without / as start) of file in Project:"
-        read compileFiles
-        firstFile=${compileFiles%% *}
-        /usr/bin/g++ $debugOptions $includeDir $rootPath/$compileFiles -o $(basename "$firstFile").out
-        ./$(basename "$compileFile").out
+        echo "Input the single or multiple relative filenames separated by space(with \$rootPath as start) of file in Project:"
+        read files
+        firstFile=${files%% *}
+        compileFiles=""
+        for file in $files
+        do
+            compileFiles+="$rootPath/$file "
+        done
+        /usr/bin/g++ $debugOptions $includeDir $compileFiles -o $(basename "$firstFile").out
+        ./$(basename "$firstFile").out
+        
     elif [ "$compileMain" == "y" ] && [ "$debug" == "n" ]
     then
         /usr/bin/g++ $nondebugOptions $includeDir $filesPath -o main.out
         ./main.out
     elif [ "$compileMain" == "n" ] && [ "$debug" == "n" ]
     then
-        echo "Input the single or multiple relative filenames separated by space(without / as start) of file in Project:"
-        read compileFiles
-        firstFile=${compileFiles%% *}
-        /usr/bin/g++ $nondebugOptions $includeDir $rootPath/$compileFiles -o $(basename "$firstFile").out
-        ./$(basename "$compileFile").out
+        echo "Input the single or multiple relative filenames separated by space(with \$rootPath as start) of file in Project:"
+        read files
+        firstFile=${files%% *}
+        compileFiles=""
+        for file in $files
+        do
+            compileFiles+="$rootPath/$file "
+        done
+        /usr/bin/g++ $nondebugOptions $includeDir $compileFiles -o $(basename "$firstFile").out
+        ./$(basename "$firstFile").out
     fi
 fi
