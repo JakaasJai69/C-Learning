@@ -13,9 +13,9 @@ int selectFunction()
             << "1) Calculator (input 1 for first and so on) \n"
             << "2) Hello Program \n"
             << "3) Language Standard check \n";
-  int x;
-  std::cin >> x;
-  return x;
+  int funcNo{};
+  std::cin >> funcNo;
+  return funcNo;
 }
 
 //Input: It takes code from selectFunction() to run respective task.

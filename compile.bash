@@ -12,15 +12,10 @@ else
     exit 1
 fi
 
-rootPath="/root/Projects/$projectName"
-filesPath="$rootPath/main.cpp $rootPath/main_functions.cpp $rootPath/Programs/*"
-
 echo "-Weffc++ has been removed because of plog"
 
 debugOptions="-fdiagnostics-color=always -g -std=c++23 -ggdb -Wall -Wextra -Wconversion -Wsign-conversion -pedantic-errors -Werror"
 nondebugOptions="-fdiagnostics-color=always -g -std=c++23 -O2 -DNDEBUG -pedantic-errors"
-
-includeDir="-I$rootPath/includes -I$rootPath/includes/Third_Party"
 
 # Check if the first argument is 'y' or 'n'
 echo "do you want a debug build (y or n):"
@@ -34,7 +29,7 @@ else
 fi
 
 #files to enable disable debug on first line.
-debugFiles="$rootPath/includes/Common.h"
+debugFiles="includes/Common.h"
 
 for file in $debugFiles; do
     if [[ -f "$file" ]]; then
@@ -72,8 +67,8 @@ then
     read compileMain
     if [ "$compileMain" == "y" ] && [ "$debug" == "y" ]
     then
-        /usr/bin/g++ $debugOptions $includeDir $filesPath -o main.out
-        ./main.out
+        /usr/bin/g++ $debugOptions $(fd -t d -p includes -d 2 | sed 's/^/-I/') $(fd -e cpp) -o main
+        ./main
     elif [ "$compileMain" == "n" ] && [ "$debug" == "y" ]
     then
         echo "Input the single or multiple relative filenames separated by space(with \$rootPath as start) of file in Project:"
@@ -84,12 +79,12 @@ then
         do
             compileFiles+="$rootPath/$file "
         done
-        /usr/bin/g++ $debugOptions $includeDir $compileFiles -o $(basename "$firstFile").out
-        ./$(basename "$firstFile").out
+        /usr/bin/g++ $debugOptions $(fd -t d -p includes -d 2 | sed 's/^/-I/') $compileFiles -o $(basename "$firstFile")
+        ./$(basename "$firstFile")
         
     elif [ "$compileMain" == "y" ] && [ "$debug" == "n" ]
     then
-        /usr/bin/g++ $nondebugOptions $includeDir $filesPath -o main.out
+        /usr/bin/g++ $nondebugOptions $(fd -t d -p includes -d 2 | sed 's/^/-I/') $(fd -e cpp) -o main.out
         ./main.out
     elif [ "$compileMain" == "n" ] && [ "$debug" == "n" ]
     then
@@ -101,7 +96,7 @@ then
         do
             compileFiles+="$rootPath/$file "
         done
-        /usr/bin/g++ $nondebugOptions $includeDir $compileFiles -o $(basename "$firstFile").out
+        /usr/bin/g++ $nondebugOptions $(fd -t d -p includes -d 2 | sed 's/^/-I/') $compileFiles -o $(basename "$firstFile").out
         ./$(basename "$firstFile").out
     fi
 fi

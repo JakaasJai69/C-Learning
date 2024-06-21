@@ -1,0 +1,49 @@
+CompileFlags:
+  Add: 
+    - -Iincludes
+    - -Iincludes/Third_Party
+    - -g 
+    - -std=c++23 
+    - -ggdb 
+    - -Wall 
+    - -Wextra 
+    - -Wconversion 
+    - -Wsign-conversion 
+    - -pedantic-errors 
+    - -Werror
+
+Diagnostics:
+  ClangTidy:
+    Add: [performance-*, modernize-*, readability-*]
+    Remove: [modernize-use-trailing-return-type]
+  UnusedIncludes: Strict
+
+Format:
+  BasedOnStyle: LLVM
+  ColumnLimit: 100
+  IndentWidth: 2
+  TabWidth: 2
+  UseTab: Never
+  BreakBeforeBraces: Attach
+  AllowShortFunctionsOnASingleLine: Inline
+
+Index:
+  Background: Build
+
+CompletionStyle: Detailed
+Completion:
+  AllScopes: true
+
+Features:
+  CrossFileRename: Yes
+
+---
+If:
+  PathMatch: .*\.cpp
+CompileFlags:
+  Add: [-std=c++23]
+Diagnostics:
+  ClangTidy:
+    Add: [modernize-*, readability-*]
+    Remove: [modernize-use-trailing-return-type]
+  UnusedIncludes: Strict
