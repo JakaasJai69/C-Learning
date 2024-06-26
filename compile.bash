@@ -15,7 +15,7 @@ fi
 echo "-Weffc++ has been removed because of plog"
 
 debugOptions="-fdiagnostics-color=always -g -std=c++23 -ggdb -Wall -Wextra -Wconversion -Wsign-conversion -pedantic-errors -Werror"
-nondebugOptions="-fdiagnostics-color=always -g -std=c++23 -O2 -DNDEBUG -pedantic-errors"
+nondebugOptions="-v -fdiagnostics-color=always -g -std=c++23 -O2 -DNDEBUG -pedantic-errors"
 
 # Check if the first argument is 'y' or 'n'
 echo "do you want a debug build (y or n):"
@@ -68,35 +68,32 @@ then
     if [ "$compileMain" == "y" ] && [ "$debug" == "y" ]
     then
         /usr/bin/g++ $debugOptions $(fd -t d -p includes -d 2 | sed 's/^/-I/') $(fd -e cpp) -o main
+        echo "PROGRAM STARTS HERE:"
         ./main
     elif [ "$compileMain" == "n" ] && [ "$debug" == "y" ]
     then
-        echo "Input the single or multiple relative filenames separated by space(with \$rootPath as start) of file in Project:"
+        echo "Input the single or multiple relative filenames separated by space in Project:"
         read files
         firstFile=${files%% *}
-        compileFiles=""
-        for file in $files
-        do
-            compileFiles+="$rootPath/$file "
-        done
-        /usr/bin/g++ $debugOptions $(fd -t d -p includes -d 2 | sed 's/^/-I/') $compileFiles -o $(basename "$firstFile")
+
+        /usr/bin/g++ $debugOptions $(fd -t d -p includes -d 2 | sed 's/^/-I/') $files -o $(basename "$firstFile")
+        echo "PROGRAM STARTS HERE:"
         ./$(basename "$firstFile")
         
     elif [ "$compileMain" == "y" ] && [ "$debug" == "n" ]
     then
         /usr/bin/g++ $nondebugOptions $(fd -t d -p includes -d 2 | sed 's/^/-I/') $(fd -e cpp) -o main.out
+        echo "PROGRAM STARTS HERE:"
         ./main.out
     elif [ "$compileMain" == "n" ] && [ "$debug" == "n" ]
     then
-        echo "Input the single or multiple relative filenames separated by space(with \$rootPath as start) of file in Project:"
+        echo "Input the single or multiple relative filenames separated by space in Project:"
         read files
         firstFile=${files%% *}
-        compileFiles=""
-        for file in $files
-        do
-            compileFiles+="$rootPath/$file "
-        done
-        /usr/bin/g++ $nondebugOptions $(fd -t d -p includes -d 2 | sed 's/^/-I/') $compileFiles -o $(basename "$firstFile").out
+
+        /usr/bin/g++ $nondebugOptions $(fd -t d -p includes -d 2 | sed 's/^/-I/') $files -o $(basename "$firstFile").out
+        echo "PROGRAM STARTS HERE:"
         ./$(basename "$firstFile").out
     fi
-fi
+else
+  echo "Something went wront. ;-)"

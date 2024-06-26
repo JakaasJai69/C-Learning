@@ -1,0 +1,11 @@
+Checks: '*'
+WarningsAsErrors: ''
+HeaderFilterRegex: ''
+HeaderFileExtensions:
+  - h
+ImplementationFileExtensions:
+  - cpp
+FormatStyle: '{
+  BasedOnStyle: mozilla,
+  IndentWidth: 2,
+}'

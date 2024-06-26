@@ -1,0 +1,30 @@
+Best practice ->
+
+-Prefer int when the size of the integer doesn’t matter (e.g. the number will always fit within the range of a 2-byte signed integer) and the variable is short-lived (e.g. destroyed at the end of the function). For example, if you’re asking the user to enter their age, or counting from 1 to 10, it doesn’t matter whether int is 16 or 32 bits (the numbers will fit either way). This will cover the vast majority of the cases you’re likely to run across.
+
+-Prefer std::int#_t when storing a quantity that needs a guaranteed range.
+
+-Prefer std::uint#_t when doing bit manipulation or where well-defined wrap-around behavior is required.
+
+Avoid the following when possible ->
+
+-short and long integers -- use a fixed-width type instead.
+
+-Unsigned types for holding quantities.
+
+-The 8-bit fixed-width integer types.
+
+-The fast and least fixed-width types.
+
+-Any compiler-specific fixed-width integers -- for example, Visual Studio defines __int8, __int16, etc…
+
+std::size_t ->
+
+We can infer that operator sizeof returns an integer value -- but what integral type is that return value? An int? A short? The answer is that sizeof returns a value of type std::size_t. std::size_t is defined as an implementation-defined unsigned integral type.
+
+Imp -> std::size_t is often used to represent the size or length of objects, particularly within the standard library.
+
+If you use std::size_t explicitly in your code, #include one of the headers that defines std::size_t (we recommend <cstddef>).
+Using sizeof does not require a header (even though it return a value whose type is std::size_t)
+
+Imp -> std::size_t imposes an upper limit on the size of an object created on the system (optional)

@@ -1,0 +1,68 @@
+Floating Point Number ->
+A floating point type variable is a variable that can hold a number with a fractional component, such as 4320.0, -3.33, or 0.01226.
+
+Category	     Type	        Minimum Size	  Typical Size
+floating point float	      4 bytes	        4 bytes
+--             double	      8 bytes	        8 bytes
+--             long double	8 bytes	        8, 12, or 16 bytes
+
+Size	Range	Precision
+4 bytes	      ±1.18 x 10-38 to ±3.4 x 1038 and 0.0
+8 bytes	      ±2.23 x 10-308 to ±1.80 x 10308 and 0.0	
+80-bits       ±3.36 x 10-4932 to ±1.18 x 104932 and 0.0
+(typically uses 12 or 16 bytes)		
+16 bytes	    ±3.36 x 10-4932 to ±1.18 x 104932 and 0.0	
+-> Precision
+-> 6-9 significant digits, typically 7
+-> 15-18 significant digits, typically 16
+-> 18-21 significant digits
+-> 33-36 significant digits
+
+
+Imp ->
+Folating point litrals default to double and an f suffix is used to denote them as float.
+example:
+
+double x{1.0}; //double with 16 significant digit
+float y{1.0}; //the litral is of double but initilized it float, works but not recommanded
+float z{1.0f}; //recommanded
+
+Printing floating point numbers ->
+eg:
+
+#include <iostream>
+int main()
+{
+	std::cout << 5.0 << '\n';
+	std::cout << 6.7f << '\n';
+	std::cout << 9876543.21 << '\n';
+
+	return 0;
+}
+
+output:
+5
+6.7
+9.87654e+06
+
+WHY?
+
+When outputting floating point numbers, std::cout has a default precision of 6 -- that is, it assumes all floating point variables are only significant to 6 digits (the minimum precision of a float), and hence it will truncate anything after that.
+
+std::cout << std::setprecision({int}) can be used to set the output precision.
+note ->
+Output manipulators (and input manipulators) are sticky -- meaning if you set them, they will remain set.
+
+The one exception is std::setw. Some IO operations reset std::setw, so std::setw should be used every time it is needed.
+
+explaination->
+
+1) In the first case, it is the default behaviour of print program, it truncates the trailing zeros.
+2) In the second case, it is expectedc
+3) In the third case, if something is significant is truncating, the print output will be in a scientific notation.
+
+-> NaN and Inf
+
+NaN just means not a number and is used to represent undefined numbers in float operations
+
+Inf means infinite and is used to represent postive or negative Inf as -Inf or Inf.

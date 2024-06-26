@@ -2,7 +2,7 @@
 #include <main_Calculator.h>
 #include <main_Hello.h>
 #include <main_LanguageStandardCheck.h>
-#include <main_Functions.h>
+#include <main_functions.h>
 #include <Common.h>
 
 //Input: None

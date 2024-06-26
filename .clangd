@@ -1,7 +1,7 @@
 CompileFlags:
   Add: 
-    - -Iincludes
-    - -Iincludes/Third_Party
+    # - -Iincludes
+    # - -Iincludes/Third_Party
     - -g 
     - -std=c++23 
     - -ggdb 
@@ -11,6 +11,7 @@ CompileFlags:
     - -Wsign-conversion 
     - -pedantic-errors 
     - -Werror
+  CompilationDatabase: build 
 
 Diagnostics:
   ClangTidy:
@@ -18,30 +19,13 @@ Diagnostics:
     Remove: [modernize-use-trailing-return-type]
   UnusedIncludes: Strict
 
-Format:
-  BasedOnStyle: LLVM
-  ColumnLimit: 100
-  IndentWidth: 2
-  TabWidth: 2
-  UseTab: Never
-  BreakBeforeBraces: Attach
-  AllowShortFunctionsOnASingleLine: Inline
-
 Index:
   Background: Build
-
-CompletionStyle: Detailed
-Completion:
-  AllScopes: true
-
-Features:
-  CrossFileRename: Yes
 
 ---
 If:
   PathMatch: .*\.cpp
-CompileFlags:
-  Add: [-std=c++23]
+
 Diagnostics:
   ClangTidy:
     Add: [modernize-*, readability-*]

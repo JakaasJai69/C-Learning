@@ -1,2 +1,22 @@
 main.out
 main
+test.cpp
+test.cpp.out
+
+# Build directories
+build/
+
+# Compiled Object files
+*.o
+
+# Compiled Dynamic libraries
+*.so
+
+# Compiled Static libraries
+*.a
+
+# Executables
+*.out
+
+# IDE-specific files
+#.vscode/

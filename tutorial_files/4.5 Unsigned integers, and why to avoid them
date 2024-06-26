@@ -1,0 +1,26 @@
+signed integers: It's just a integer which has a capibility to store negaive as well as positive numbers. but due to it, it uses it's 1 bit for sign storingv causing it to have less positive range for storing values.
+formula: -2^(n-1) to {2^(n-1) -1} where n is the bits for data type
+
+unsigned integers: it's a integer type which can only store positive and zero values, consequently can have more positive range.
+formula: 0 to {2^(n) -1} where n is the bits for data type
+
+
+Modulo wrapping: It happens in unsigned integral types, when a data type tries to store a value more than maximum it has range for, then c++ just divides the number with the maximum allowed range of that data types and the value saved by the that data type is the reminder of the division.
+eg: 
+
+unsigned short x{65535};
+std:cout << x; i //output 65535
+
+x = x + 1;
+std:cout << x; //output 0
+
+x = x + 1;
+std:cout << x; //output 1
+
+x = 0;
+x = x - 1;
+std:cout << x; //output 65535 (reverse wrapping)
+
+etc
+
+
