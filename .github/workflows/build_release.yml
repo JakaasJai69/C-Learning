@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v
+    - uses: actions/checkout@v4
     - uses: uraimo/run-on-arch-action@v2
       name: Set arch and Build
       id: build
