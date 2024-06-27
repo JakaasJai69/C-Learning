@@ -1,0 +1,48 @@
+name: ARM64 Cross-Compilation
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+jobs:
+  build_job:
+    # The host should always be linux
+    runs-on: [self-hosted, linux, ARM64]
+    name: Build on debian GNU/Linux 12 (bookworm) with aarch64
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create build directory
+        run: mkdir build
+
+      - name: Install dependencies
+        run: apt-get install -q -y build-essential clang cmake
+
+      - name: Configure CMake
+        working-directory: ${{github.workspace}}/build
+        run: cmake ..
+
+      - name: Build
+        working-directory: ${{github.workspace}}/build
+        run: |
+          cmake --build .
+          mv main.out main-debian12_aarch64.out
+
+      - name: Get the tag name
+        run: echo "TAG_NAME=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
+      - name: Release Build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+        uses: softprops/action-gh-release@v2
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          draft: true
+          generate_release_notes: true
+          append_body: true
+          body: "Doing something new *💀💀*"
+          name: Test-Releases-${{ env.TAG_NAME }}
+          files: |
+            build/main-debian12_aarch64.out
+
