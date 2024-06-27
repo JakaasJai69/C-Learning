@@ -41,7 +41,7 @@ jobs:
           cp main.out /artifacts/main.out
           echo "Produced artifact at /artifacts/main.out"
           echo "changing permissions for cleanup"
-          chown -R $(id -u):$(id -g) .
+          chmod -R a+rwx  ../build
           cd ..
 
     - name: Checkout
