@@ -85,7 +85,9 @@ jobs:
             cp main.out "/artifacts/${artifact_name}"
             echo "Produced artifact at /artifacts/${artifact_name}"
             cd ..
-            chmod -R a+rwx build artifacts
+            ls -al
+            ls -al /artifacts/
+            chmod -R a+rwx build /artifacts
 
       - name: Get the version
         id: get_version
@@ -101,7 +103,10 @@ jobs:
           body: "I hope everything works *fingers crossed*"
           name: Test-Releases-${{ steps.get_version.outputs.VERSION }}
           files: |
-            "${PWD}/artifacts/*"
+            artifacts/*
+            /artifacts/*
 
       - name: Checkout
         uses: actions/checkout@v4
+
+
