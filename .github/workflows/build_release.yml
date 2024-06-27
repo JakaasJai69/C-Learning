@@ -6,64 +6,102 @@ on:
       - "v*.*.*"
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  build_job:
+    # The host should always be linux
+    runs-on: ubuntu-22.04
+    name: Build on ${{ matrix.distro }} ${{ matrix.arch }}
 
+    # Run steps on a matrix of 4 arch/distro combinations
+    strategy:
+      matrix:
+        include:
+          - arch: aarch64
+            distro: ubuntu22.04
+          # - arch: aarch64
+          #   distro: bullseye
+          # - arch: ppc64le
+          #   distro: alpine_latest
+          # - arch: none
+          #   distro: none
+          #   base_image: riscv64/busybox
     steps:
-    - uses: actions/checkout@v4
-    - uses: uraimo/run-on-arch-action@v2
-      name: Set arch and Build
-      id: build
-      with:
-        arch: aarch64
-        distro: ubuntu22.04
-        githubToken: ${{ github.token }}
+      - uses: actions/checkout@v4
+      - uses: uraimo/run-on-arch-action@v2
+        name: Build artifact
+        id: build
+        with:
+          arch: ${{ matrix.arch }}
+          distro: ${{ matrix.distro }}
 
-        setup: |
+          # Not required, but speeds up builds
+          githubToken: ${{ github.token }}
+
+          # Create an artifacts directory
+          setup: |
             mkdir -p "${PWD}/artifacts"
 
-        dockerRunArgs: |
+          # Mount the artifacts directory as /artifacts in the container
+          dockerRunArgs: |
             --volume "${PWD}/artifacts:/artifacts"
 
-        shell: /bin/sh
+          # Pass some environment variables to the container
+          env: | # YAML, but pipe character is necessary
+            artifact_name: main-${{ matrix.distro }}_${{ matrix.arch }}
 
-        install: |
-          apt-get update -q
-          apt-get install -y build-essential clang cmake
-        run: |
-          ls -la
-          mkdir build
-          cd build
-          ls -la
-          cmake -DCMAKE_BUILD_TYPE=Release ..
-          ls -al
-          cmake --build .
-          ls -la
-          mv main.out /artifacts/build-aarch64-main.out
-          echo "Produced artifact at /artifacts/build-aarch64-main.out"
-          cd /artifacts
-          ls -la
-          echo "changing permissions for cleanup"
-          cd /home/runner/work/C-Learning/C-Learning/
-          chmod -R a+rwx build
+          # The shell to run commands with in the container
+          shell: /bin/sh
 
+          # Install some dependencies in the container. This speeds up builds if
+          # you are also using githubToken. Any dependencies installed here will
+          # be part of the container image that gets cached, so subsequent
+          # builds don't have to re-install them. The image layer is cached
+          # publicly in your project's package repository, so it is vital that
+          # no secrets are present in the container state or logs.
+          install: |
+            case "${{ matrix.distro }}" in
+              ubuntu*|jessie|stretch|buster|bullseye)
+                apt-get update -q -y
+                apt-get install -q -y build-essential clang cmake
+                ;;
+              fedora*)
+                dnf -y update
+                dnf -y install build-essential clang cmake
+                ;;
+              alpine*)
+                apk update
+                apk add build-essential clang cmake
+                ;;
+            esac
 
-    - name: Checkout
-      uses: actions/checkout@v4
+          # Produce a binary artifact and place it in the mounted volume
+          run: |
+            mkdir build
+            cd build
+            ls -la
+            cmake -DCMAKE_BUILD_TYPE=Release ..
+            ls -al
+            cmake --build .
+            ls -la
+            cp main.out "/artifacts/${artifact_name}"
+            echo "Produced artifact at /artifacts/${artifact_name}"
+            cd ..
+            chmod -R a+rwx build artifacts
 
-    - name: Get the version
-      id: get_version
-      run: echo "VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+      - name: Get the version
+        id: get_version
+        run: echo "VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
 
-    - name: Release Build
-      uses: softprops/action-gh-release@v2
-      if: startsWith(github.ref, 'refs/tags/')
-      with:
-        draft: true
-        generate_release_notes: true
-        append_body: true
-        body: "we have a bit of a problem here *cought*"
-        name: Test-Releases-${{ steps.get_version.outputs.VERSION }}
-        files: |
-          "${PWD}/artifacts/build-aarch64-main.out"
+      - name: Release Build
+        uses: softprops/action-gh-release@v2
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          draft: true
+          generate_release_notes: true
+          append_body: true
+          body: "I hope everything works *fingers crossed*"
+          name: Test-Releases-${{ steps.get_version.outputs.VERSION }}
+          files: |
+            "${PWD}/artifacts/*"
 
+      - name: Checkout
+        uses: actions/checkout@v4
