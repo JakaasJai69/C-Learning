@@ -1,0 +1,38 @@
+name: ARM64 Cross-Compilation
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set arch, config and build
+      uses: uraimo/run-on-arch-action@v2
+      with:
+        arch: aarch64
+        distro: ubuntu_latest
+        githubToken: ${{ github.token }}
+        install: |
+          apt-get update -q
+          apt-get install -y build-essential clang cmake
+        run: |
+          mkdir build
+          cd build
+          cmake -DCMAKE_BUILD_TYPE=Release
+          cmake --build
+          cd ..
+
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Release Build
+      uses: softprops/action-gh-release@v2
+        with:
+          name: Test-Release
+          file: build/main.out

@@ -1,7 +1,8 @@
 #include <Common.h>
 #include <main_functions.h>
 
-int main() {
+int main()
+{
 #ifdef DEBUG
   plog::init(plog::debug, "Logfile.txt");
 #endif
@@ -14,6 +15,7 @@ int main() {
   // selectFunction() returns a code for executeFuntion() to run the respective
   // task
   execFunction(selectFunction());
+
 
   return 0;
 }

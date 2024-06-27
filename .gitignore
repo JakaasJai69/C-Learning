@@ -3,9 +3,11 @@ main
 test.cpp
 test.cpp.out
 
+
 # Build directories
 build/
-
+.cache/
+tools/
 # Compiled Object files
 *.o
 
@@ -19,4 +21,7 @@ build/
 *.out
 
 # IDE-specific files
-#.vscode/
+.vscode/
+
+# docs generation
+docs/
