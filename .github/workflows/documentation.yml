@@ -17,7 +17,7 @@ jobs:
       run: sudo apt-get install doxygen -y
 
     - name : Generate Docs
-      run: doxygen DoxyFile
+      run: doxygen Doxyfile
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
