@@ -31,6 +31,7 @@ jobs:
 
       - name: Get the tag name
         run: echo "TAG_NAME=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
+
       - name: Release Build
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -41,7 +42,7 @@ jobs:
           draft: true
           generate_release_notes: true
           append_body: true
-          body: "Doing something new *💀💀*"
+          body: "At least it works, RIGHT?!!"
           name: Test-Releases-${{ env.TAG_NAME }}
           files: |
             build/main-debian12_aarch64.out

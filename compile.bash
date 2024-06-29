@@ -79,7 +79,7 @@ then
         /usr/bin/g++ $debugOptions $(fd -t d -p includes -d 2 | sed 's/^/-I/') $files -o $(basename "$firstFile")
         echo "PROGRAM STARTS HERE:"
         ./$(basename "$firstFile")
-        
+
     elif [ "$compileMain" == "y" ] && [ "$debug" == "n" ]
     then
         /usr/bin/g++ $nondebugOptions $(fd -t d -p includes -d 2 | sed 's/^/-I/') $(fd -e cpp) -o main.out
@@ -97,3 +97,4 @@ then
     fi
 else
   echo "Something went wront. ;-)"
+fi

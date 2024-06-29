@@ -106,9 +106,3 @@ jobs:
           name: Test-Releases-${{ steps.get_version.outputs.VERSION }}
           files: |
             artifacts/*
-            /artifacts/*
-
-      - name: Checkout
-        uses: actions/checkout@v4
-
-

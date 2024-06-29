@@ -2,22 +2,21 @@ name: Documentation
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    tags:
+      - "v*.*.*"
 
 jobs:
   build:
     name: Build and publish documentation
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, ARM64]
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
 
     - name: Install Doxygen
-      run: sudo apt-get install doxygen -y
+      run: echo 1 sudo -S apt-get install doxygen -y
 
     - name : Generate Docs
-      run: doxygen Doxyfile
+      run: doxygen
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3

@@ -18,7 +18,8 @@ set(SOURCE_FILES
 set (target_name
     main.out
 )
-
+#for clangd compilation database
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 add_executable(${target_name} ${SOURCE_FILES})
 
 set(CMAKE_CXX_STANDARD 23)
