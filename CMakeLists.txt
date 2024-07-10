@@ -35,27 +35,27 @@ target_include_directories(${target_name}
 
 set(CMAKE_CONFIGURATION_TYPES "Debug;Release" CACHE STRING "" FORCE)
 
-set(DEBUG_FLAGS 
-    -v 
+set(DEBUG_FLAGS
+    -v
     -fdiagnostics-color=always
-    -g 
-    -std=c++23 
-    -ggdb 
-    -Wall 
-    -Wextra 
-    -Wconversion 
-    -Wsign-conversion 
-    -pedantic-errors 
+    -g
+    -std=c++23
+    -ggdb
+    -Wall
+    -Wextra
+    -Wconversion
+    -Wsign-conversion
+    -pedantic-errors
     -Werror
 )
 
 set(RELEASE_FLAGS
-    -v 
-    -fdiagnostics-color=always 
-    -g 
-    -std=c++23 
-    -O2 
-    -DNDEBUG 
+    -v
+    -fdiagnostics-color=always
+    -g
+    -std=c++23
+    -O2
+    -DNDEBUG
     -pedantic-errors
 )
 

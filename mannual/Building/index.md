@@ -4,7 +4,7 @@
 
 > **Does it work?** 
 
-## Requirments: {#requirments}
+## Requirments: {#requirements}
 
 - packages
 

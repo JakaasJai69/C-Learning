@@ -21,7 +21,8 @@ tools/
 *.out
 
 # IDE-specific files
-.vscode/
+#.vscode/
+# for saving tasks and settings
 
 # docs generation
 docs/

@@ -54,6 +54,8 @@ int execFunction(int execCode)
   case 3:
     execLanguageStandardCheck();
     break;
+  default:
+    std::cout << "Check the input.";
   }
   return 0;
 }

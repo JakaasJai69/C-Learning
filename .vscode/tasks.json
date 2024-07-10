@@ -1,0 +1,62 @@
+
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "cmake configure debug",
+            "command": "cmake",
+            "args": [
+                "-S", ".",
+                "-B", "build/debug",
+                "-DCMAKE_BUILD_TYPE=Debug"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            }
+        },
+        {
+            "type": "shell",
+            "label": "cmake configure release",
+            "command": "cmake",
+            "args": [
+                "-S", ".",
+                "-B", "build/release",
+                "-DCMAKE_BUILD_TYPE=Release"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            }
+        },
+        {
+            "type": "shell",
+            "label": "cmake build debug",
+            "command": "cmake",
+            "args": [
+                "--build", "build/debug"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "dependsOn": [
+                "cmake configure debug"
+            ],
+            "group": "build"
+        },
+        {
+            "type": "shell",
+            "label": "cmake build release",
+            "command": "cmake",
+            "args": [
+                "--build", "build/release"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "dependsOn": [
+                "cmake configure release"
+            ],
+            "group": "build"
+        }
+    ]
+}
