@@ -1,7 +1,6 @@
 main.out
 main
-test.cpp
-test.cpp.out
+test*
 
 
 # Build directories

@@ -1,24 +1,33 @@
 # building and requirments {#building}
 
-# A big and very long test header **( ͡° ͜ʖ ͡°)** {#test}
+## A big and very long test header **( ͡° ͜ʖ ͡°)** {#test}
 
-> **Does it work?** 
+> **Does it work?**
+![😎😎](../../img/ekdamJhakaas.jpg)
 
-## Requirments: {#requirements}
+### Requirments: {#requirements}
+
+![Skip To Karoge Hi](../../img/hanMalumHaiChalApneBaapKoMatSikha.jpg)
 
 - packages
 
-* `apt-get update && apt-get install build-essencial cmake`
-* `pkg update && pkg install build-essencial cmake`
+  - `apt-get update && apt-get install build-essential cmake`
+
+  - `pkg update && pkg install build-essential cmake`
 
 - a linux device.
 
-* aarch64 **Tested**
-* fk others. **NOT TESTED**
+  - aarch64 **Tested**
+
+- fk others. **NOT TESTED**
+- ![HilaDala](../../img/kyaHilaDalaNa.jpg)
 
 - At the end, it's just me trying to learn.
+- ![farkNhiPadta](../../img/hamkoGhantaFarkNhiPadta.jpg)
 
-## Build Steps {#buildsteps}
+### Build Steps {#buildsteps}
+
+![abMajaAyega](../../img/abhiMajaAyegaNaBidu.jpg)
 
 A simple way to build this project is with _cmake_, clone the repository, cd into the root of the _project_ and _run_:
 
@@ -29,20 +38,22 @@ A simple way to build this project is with _cmake_, clone the repository, cd int
 
 for more information goto....idk, _google_ maybe?
 
-Let's make a table just for the sake of it, yeah.
+![googleKarle](../../img/googleKarkeDekhoPataChalega.jpg)
 
+Let's make a table just for the sake of it, yeah.
+______________________________________
 |        My life | Done |
 | -------------: | :--- |
 |          Study | ❌   |
 |           Work | ❌   |
 |           Play | ✅   |
-|   just testing |      |
+|   just testing ||
 |      same here | okay |
-| just stop okay | ^    |
-
+| just stop okay |    ^ |
+______________________________________
 does c++ code block works?
 
-```{.cpp}
+```cpp
 #include <iostream>
 
 int main(){
@@ -52,12 +63,12 @@ int main(){
 }
 ```
 
-ofcourse it works you twerp, you can see it in treesitter.
+of-course it works you twerp, you can see it in treesitter.
 
 Just to check if reference work, hehe.
 
 [this is test](#test)
 
-[this is requirments](#requirments)
+[this is requirments](#requirements)
 
 [this is build](#buildsteps)

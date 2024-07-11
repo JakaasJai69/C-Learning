@@ -20,12 +20,12 @@
     "gitlens.graph.minimap.dataType": "lines",
     "debug.showBreakpointsInOverviewRuler": true,
     "debug.allowBreakpointsEverywhere": false,
-    "editor.lineNumbers": "off",
+    "editor.lineNumbers": "relative",
     "editor.minimap.enabled": false,
     "workbiench.sideBar.location": "right",
     "editor.fontLigatures": true,
     "terminal.integrated.fontFamily": "FiraCode Nerd Font",
-    "editor.fontFamily": "FiraCode Nerd Font, 'Droid Sans Mono', 'monospace', monospace",
+    "editor.fontFamily": "FiraCode Nerd Font",
     "cmake.pinnedCommands": [
         "workbench.action.tasks.configureTaskRunner",
         "workbench.action.tasks.runTask"
@@ -34,6 +34,8 @@
         "asvetliakov.vscode-neovim": 1
     },
     "workbench.iconTheme": "material-icon-theme",
+    "editor.codeLensFontFamily": "FiraCode Nerd Font",
+    "editor.renderWhitespace": "boundary",
 // #region doxygen
   // The prefix that is used for each comment line except for first and last.
   "doxdocgen.c.commentPrefix": " * ",
@@ -171,7 +173,17 @@
   ],
  // #endregion
 
- "redhat.telemetry.enabled": false,
+"redhat.telemetry.enabled": false,
+"cSpell.words": [
+  "aarch",
+  "bohot",
+  "buildsteps",
+  "cout",
+  "hehe",
+  "IDGAF",
+  "iostream",
+  "treesitter"
+],
 
 
 }
