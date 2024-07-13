@@ -1,14 +1,20 @@
+/**
+ * @file main_Calculator.cpp
+ * @author JakaasJai69 (namdeomritunjay@gmail.com)
+ * @brief definitions fkr calculator.
+ * @version 1.0
+ * @date 2024-07-13
+ *
+ * @copyright Copyright (c) 2024
+ *
+ */
+
 #include <Common.h>
 #include <iostream>
 #include <main_Calculator.h>
 #include <string>
 
 /**
- * @brief Executes a simple calculator function.
- *
- * This function prompts the user to input two numbers and an operator,
- * performs the specified arithmetic operation, and displays the result.
- *
  * @details
  * The function performs the following steps:
  * 1. Logs a debug message indicating the function has been called.
@@ -22,21 +28,23 @@
  * and returning 1 to indicate an error.
  *
  * @return Returns 0 on successful execution, 1 if division by zero is attempted.
+ *
  */
 int execCalculator()
 {
   PLOGD << "[debug: execCalculator() is called.]\n";
   std::cout << "Input your Number: \n";
-  double firstInput{};
+  double firstInput{}; //stores first input.
   std::cin >> firstInput;
+
   std::cout
     << "Input your Operator( '+' , '-' , '*' or '/' ): \n";
   std::string inOperator;
   std::cin >> inOperator;
   std::cout << "Input your Number: \n";
-  double nextInput{};
+  double nextInput{}; //stores next input.
   std::cin >> nextInput;
-  double result{};
+  double result{}; //stores result.
   switch (inOperator[0])
   {
   case '+':

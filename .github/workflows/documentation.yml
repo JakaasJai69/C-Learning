@@ -10,10 +10,11 @@ jobs:
     name: Build and publish documentation
     runs-on: [self-hosted, linux, ARM64]
     steps:
-    - uses: actions/checkout@v4
 
     - name: Install Doxygen
-      run: echo 1 sudo -S apt-get install doxygen -y
+      run: echo 1 sudo -S apt-get install doxygen build-essentials -y
+
+    - uses: actions/checkout@v4
 
     - name : Generate Docs
       run: doxygen

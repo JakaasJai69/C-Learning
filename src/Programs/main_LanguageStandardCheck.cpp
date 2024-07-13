@@ -1,3 +1,14 @@
+/**
+ * @file main_LanguageStandardCheck.cpp
+ * @author JakaasJai69 (namdeomritunjay@gmail.com)
+ * @brief Standard check functions.
+ * @version 1.0
+ * @date 2024-07-13
+ *
+ * @copyright Copyright (c) 2024
+ *
+ */
+
 // This program prints the C++ language standard your compiler is currently using
 // Freely redistributable, courtesy of learncpp.com (https://www.learncpp.com/cpp-tutorial/what-language-standard-is-my-compiler-using/)
 
@@ -5,19 +16,7 @@
 #include <iostream>
 #include <main_LanguageStandardCheck.h>
 
-
 /**
- * @brief Determines the C++ standard being used by the compiler.
- *
- * This function attempts to determine the C++ standard being used by the compiler.
- * It handles different compiler-specific macros to get this information.
- *
- * @details
- * The function uses the following logic:
- * 1. For Visual Studio 2015 or newer, it uses _MSVC_LANG.
- * 2. For older versions of Visual Studio, it returns -1.
- * 3. For other compilers, it uses the standard __cplusplus macro.
- *
  * @return The C++ standard code as a long integer, or -1 if unable to determine.
  */
 long getCPPStandard()
@@ -40,19 +39,7 @@ long getCPPStandard()
 }
 
 /**
- * @brief Executes a check to determine and display the C++ language standard being used.
- *
- * This function calls getCPPStandard() to determine the C++ standard,
- * then matches it against known standards to provide a human-readable output.
- *
- * @details
- * The function performs the following steps:
- * 1. Calls getCPPStandard() to get the C++ standard code.
- * 2. If the standard can't be determined, it displays an error message.
- * 3. Compares the returned code against known standard codes.
- * 4. Outputs the matching C++ standard version or indicates if it's a preview/pre-release version.
- *
- * @return Always returns 0, indicating successful execution.
+ * @return Always returns 0.
  */
 int execLanguageStandardCheck()
 {

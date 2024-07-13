@@ -3,11 +3,11 @@
 ## A big and very long test header **( ͡° ͜ʖ ͡°)** {#test}
 
 > **Does it work?**
-![😎😎](../../img/ekdamJhakaas.jpg)
+![😎😎](ekdamJhakaas.jpg)
 
 ### Requirments: {#requirements}
 
-![Skip To Karoge Hi](../../img/hanMalumHaiChalApneBaapKoMatSikha.jpg)
+![Skip To Karoge Hi](hanMalumHaiChalApneBaapKoMatSikha.jpg)
 
 - packages
 
@@ -20,14 +20,14 @@
   - aarch64 **Tested**
 
 - fk others. **NOT TESTED**
-- ![HilaDala](../../img/kyaHilaDalaNa.jpg)
+- ![HilaDala](kyaHilaDalaNa.jpg)
 
 - At the end, it's just me trying to learn.
-- ![farkNhiPadta](../../img/hamkoGhantaFarkNhiPadta.jpg)
+- ![farkNhiPadta](hamkoGhantaFarkNhiPadta.jpg)
 
 ### Build Steps {#buildsteps}
 
-![abMajaAyega](../../img/abhiMajaAyegaNaBidu.jpg)
+![abMajaAyega](abhiMajaAyegaNaBidu.jpg)
 
 A simple way to build this project is with _cmake_, clone the repository, cd into the root of the _project_ and _run_:
 
@@ -38,7 +38,7 @@ A simple way to build this project is with _cmake_, clone the repository, cd int
 
 for more information goto....idk, _google_ maybe?
 
-![googleKarle](../../img/googleKarkeDekhoPataChalega.jpg)
+![googleKarle](googleKarkeDekhoPataChalega.jpg)
 
 Let's make a table just for the sake of it, yeah.
 ______________________________________
