@@ -1,27 +1,38 @@
-name: ARM64 Cross-Compilation
-
-# on:
-  # push:
-    # tags:
-      # - "v*.*.*"
+name: Build and Release through self hosted
 
 on:
   workflow_dispatch:
-
+    inputs:
+      version:
+        description: 'Version name for the release (leave empty to use latest tag)'
+        required: false
+        type: string
 
 jobs:
-  build_job:
-    # The host should always be linux
+  release:
     runs-on: [self-hosted, linux, ARM64]
-    name: Build on debian GNU/Linux 12 (bookworm) with aarch64
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Set up environment
+        run: |
+          if [ -z "${{ github.event.inputs.version }}" ]; then
+            echo "Using latest tag"
+            LATEST_TAG=$(git describe --tags --abbrev=0)
+            echo "VERSION=$LATEST_TAG" >> $GITHUB_ENV
+          else
+            echo "Using provided version"
+            echo "VERSION=${{ github.event.inputs.version }}" >> $GITHUB_ENV
+          fi
 
       - name: Create build directory
         run: mkdir build
 
       - name: Install dependencies
-        run: echo 1 sudo -S apt-get install -q -y build-essential clang cmake
+        run: echo 1 | sudo -S apt-get install -q -y build-essential clang cmake
 
       - name: Configure CMake
         working-directory: ${{github.workspace}}/build
@@ -30,24 +41,28 @@ jobs:
       - name: Build
         working-directory: ${{github.workspace}}/build
         run: |
+          # Add your build commands here
+          echo "Building program version ${{ env.VERSION }}"
           cmake --build .
-          mv main.out main-debian12_aarch64.out
+          mv main.out main-debian12_aarch64_${{ env.VERSION }}.out
 
-      - name: Get the tag name
-        run: echo "TAG_NAME=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
-
-      - name: Release Build
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-        uses: softprops/action-gh-release@v2
-        if: startsWith(github.ref, 'refs/tags/')
         with:
-          draft: true
-          generate_release_notes: true
-          append_body: true
-          body: "At least it works, RIGHT?!!"
-          name: Test-Releases-${{ env.TAG_NAME }}
-          files: |
-            build/main-debian12_aarch64.out
+          tag_name: ${{ env.VERSION }}
+          release_name: Release ${{ env.VERSION }}
+          draft: false
+          prerelease: false
 
+      - name: Upload Release Asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: main-debian12_aarch64_${{ env.VERSION }}.out
+          asset_name: your-program-${{ env.VERSION }}
+          asset_content_type: application/octet-stream
