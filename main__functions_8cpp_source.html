@@ -24,7 +24,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="dest.jpg"/></td>
+  <td id="projectlogo"><img alt="Logo" src="Khopda.jpg"/></td>
   <td id="projectalign">
    <div id="projectname">C-Learning<span id="projectnumber">&#160;1.0</span>
    </div>
@@ -87,13 +87,15 @@ $(document).ready(function(){initNavTree('main__functions_8cpp_source.html','');
   <div class="headertitle"><div class="title">main_functions.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="main__functions_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &lt;Common.h&gt;</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;main_Calculator.h&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;main_Hello.h&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;main_LanguageStandardCheck.h&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;main_functions.h&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<a href="main__functions_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;<a class="code" href="Common_8h.html">Common.h</a>&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;<a class="code" href="main__Calculator_8h.html">main_Calculator.h</a>&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;<a class="code" href="main__Hello_8h.html">main_Hello.h</a>&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;<a class="code" href="main__LanguageStandardCheck_8h.html">main_LanguageStandardCheck.h</a>&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;<a class="code" href="main__functions_8h.html">main_functions.h</a>&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="main__functions_8cpp.html#a94bcb9a5cb3c4a055684a050c01624db">   20</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="main__functions_8cpp.html#a94bcb9a5cb3c4a055684a050c01624db">selectFunction</a>()</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>{</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  std::cout</div>
@@ -106,27 +108,35 @@ $(document).ready(function(){initNavTree('main__functions_8cpp_source.html','');
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  <span class="keywordflow">return</span> funcNo;</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>}</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="main__functions_8cpp.html#a8d062b9c6230d3334285b1dea223b571">   44</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="main__functions_8cpp.html#a8d062b9c6230d3334285b1dea223b571">execFunction</a>(<span class="keywordtype">int</span> execCode)</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>{</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <span class="keywordflow">switch</span> (execCode)</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  {</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="keywordflow">case</span> 1:</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <a class="code hl_function" href="main__Calculator_8cpp.html#a95cf70b564de06240d5833077748018a">execCalculator</a>();</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keywordflow">case</span> 2:</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <a class="code hl_function" href="main__Hello_8cpp.html#a9eb1fb9382aced9f2ac9b54f83c2010e">execHello</a>();</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <span class="keywordflow">case</span> 3:</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <a class="code hl_function" href="main__LanguageStandardCheck_8cpp.html#af0756f7fcdd813766a5c485fd684210f">execLanguageStandardCheck</a>();</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  }</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>}</div>
-<div class="ttc" id="amain__Calculator_8cpp_html_a95cf70b564de06240d5833077748018a"><div class="ttname"><a href="main__Calculator_8cpp.html#a95cf70b564de06240d5833077748018a">execCalculator</a></div><div class="ttdeci">int execCalculator()</div><div class="ttdoc">Executes a simple calculator function.</div><div class="ttdef"><b>Definition:</b> <a href="main__Calculator_8cpp_source.html#l00026">main_Calculator.cpp:26</a></div></div>
-<div class="ttc" id="amain__Hello_8cpp_html_a9eb1fb9382aced9f2ac9b54f83c2010e"><div class="ttname"><a href="main__Hello_8cpp.html#a9eb1fb9382aced9f2ac9b54f83c2010e">execHello</a></div><div class="ttdeci">int execHello()</div><div class="ttdoc">simple hello program whicb prints, well 'hello'.</div><div class="ttdef"><b>Definition:</b> <a href="main__Hello_8cpp_source.html#l00023">main_Hello.cpp:23</a></div></div>
-<div class="ttc" id="amain__LanguageStandardCheck_8cpp_html_af0756f7fcdd813766a5c485fd684210f"><div class="ttname"><a href="main__LanguageStandardCheck_8cpp.html#af0756f7fcdd813766a5c485fd684210f">execLanguageStandardCheck</a></div><div class="ttdeci">int execLanguageStandardCheck()</div><div class="ttdoc">Executes a check to determine and display the C++ language standard being used.</div><div class="ttdef"><b>Definition:</b> <a href="main__LanguageStandardCheck_8cpp_source.html#l00057">main_LanguageStandardCheck.cpp:57</a></div></div>
-<div class="ttc" id="amain__functions_8cpp_html_a8d062b9c6230d3334285b1dea223b571"><div class="ttname"><a href="main__functions_8cpp.html#a8d062b9c6230d3334285b1dea223b571">execFunction</a></div><div class="ttdeci">int execFunction(int execCode)</div><div class="ttdoc">Executes the function corresponding to the provided execution code.</div><div class="ttdef"><b>Definition:</b> <a href="main__functions_8cpp_source.html#l00044">main_functions.cpp:44</a></div></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="main__functions_8cpp.html#a8d062b9c6230d3334285b1dea223b571">   33</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="main__functions_8cpp.html#a8d062b9c6230d3334285b1dea223b571">execFunction</a>(<span class="keywordtype">int</span> execCode)</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>{</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <span class="keywordflow">switch</span> (execCode)</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <span class="keywordflow">case</span> 1:</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <a class="code hl_function" href="main__Calculator_8cpp.html#a95cf70b564de06240d5833077748018a">execCalculator</a>();</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <span class="keywordflow">case</span> 2:</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <a class="code hl_function" href="main__Hello_8cpp.html#a9eb1fb9382aced9f2ac9b54f83c2010e">execHello</a>();</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <span class="keywordflow">case</span> 3:</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <a class="code hl_function" href="main__LanguageStandardCheck_8cpp.html#af0756f7fcdd813766a5c485fd684210f">execLanguageStandardCheck</a>();</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <span class="keywordflow">default</span>:</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Check the input.&quot;</span>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  }</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>}</div>
+<div class="ttc" id="aCommon_8h_html"><div class="ttname"><a href="Common_8h.html">Common.h</a></div><div class="ttdoc">common headers.</div></div>
+<div class="ttc" id="amain__Calculator_8cpp_html_a95cf70b564de06240d5833077748018a"><div class="ttname"><a href="main__Calculator_8cpp.html#a95cf70b564de06240d5833077748018a">execCalculator</a></div><div class="ttdeci">int execCalculator()</div><div class="ttdoc">Executes a simple calculator function.</div><div class="ttdef"><b>Definition:</b> <a href="main__Calculator_8cpp_source.html#l00033">main_Calculator.cpp:33</a></div></div>
+<div class="ttc" id="amain__Calculator_8h_html"><div class="ttname"><a href="main__Calculator_8h.html">main_Calculator.h</a></div><div class="ttdoc">Header file containing calculator functions.</div></div>
+<div class="ttc" id="amain__Hello_8cpp_html_a9eb1fb9382aced9f2ac9b54f83c2010e"><div class="ttname"><a href="main__Hello_8cpp.html#a9eb1fb9382aced9f2ac9b54f83c2010e">execHello</a></div><div class="ttdeci">int execHello()</div><div class="ttdoc">Executes a simple &quot;Hello, world!&quot; program.</div><div class="ttdef"><b>Definition:</b> <a href="main__Hello_8cpp_source.html#l00024">main_Hello.cpp:24</a></div></div>
+<div class="ttc" id="amain__Hello_8h_html"><div class="ttname"><a href="main__Hello_8h.html">main_Hello.h</a></div><div class="ttdoc">Declarations for Hello functions.</div></div>
+<div class="ttc" id="amain__LanguageStandardCheck_8cpp_html_af0756f7fcdd813766a5c485fd684210f"><div class="ttname"><a href="main__LanguageStandardCheck_8cpp.html#af0756f7fcdd813766a5c485fd684210f">execLanguageStandardCheck</a></div><div class="ttdeci">int execLanguageStandardCheck()</div><div class="ttdoc">Determines the C++ standard being used by the compiler.</div><div class="ttdef"><b>Definition:</b> <a href="main__LanguageStandardCheck_8cpp_source.html#l00044">main_LanguageStandardCheck.cpp:44</a></div></div>
+<div class="ttc" id="amain__LanguageStandardCheck_8h_html"><div class="ttname"><a href="main__LanguageStandardCheck_8h.html">main_LanguageStandardCheck.h</a></div><div class="ttdoc">Declarations for Language standard check.</div></div>
+<div class="ttc" id="amain__functions_8cpp_html_a8d062b9c6230d3334285b1dea223b571"><div class="ttname"><a href="main__functions_8cpp.html#a8d062b9c6230d3334285b1dea223b571">execFunction</a></div><div class="ttdeci">int execFunction(int execCode)</div><div class="ttdoc">Executes the function corresponding to the provided execution code.</div><div class="ttdef"><b>Definition:</b> <a href="main__functions_8cpp_source.html#l00033">main_functions.cpp:33</a></div></div>
 <div class="ttc" id="amain__functions_8cpp_html_a94bcb9a5cb3c4a055684a050c01624db"><div class="ttname"><a href="main__functions_8cpp.html#a94bcb9a5cb3c4a055684a050c01624db">selectFunction</a></div><div class="ttdeci">int selectFunction()</div><div class="ttdoc">Prompts the user to select a function and returns their choice.</div><div class="ttdef"><b>Definition:</b> <a href="main__functions_8cpp_source.html#l00020">main_functions.cpp:20</a></div></div>
+<div class="ttc" id="amain__functions_8h_html"><div class="ttname"><a href="main__functions_8h.html">main_functions.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

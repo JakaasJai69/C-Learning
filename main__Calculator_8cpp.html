@@ -24,7 +24,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="dest.jpg"/></td>
+  <td id="projectlogo"><img alt="Logo" src="Khopda.jpg"/></td>
   <td id="projectalign">
    <div id="projectname">C-Learning<span id="projectnumber">&#160;1.0</span>
    </div>
@@ -89,9 +89,12 @@ $(document).ready(function(){initNavTree('main__Calculator_8cpp.html',''); initR
   <div class="headertitle"><div class="title">main_Calculator.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;Common.h&gt;</code><br />
+
+<p>definitions fkr calculator.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &lt;<a class="el" href="Common_8h_source.html">Common.h</a>&gt;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
-<code>#include &lt;main_Calculator.h&gt;</code><br />
+<code>#include &lt;<a class="el" href="main__Calculator_8h_source.html">main_Calculator.h</a>&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
 </div>
 <p><a href="main__Calculator_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -102,7 +105,15 @@ Functions</h2></td></tr>
 <tr class="memdesc:a95cf70b564de06240d5833077748018a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes a simple calculator function.  <a href="main__Calculator_8cpp.html#a95cf70b564de06240d5833077748018a">More...</a><br /></td></tr>
 <tr class="separator:a95cf70b564de06240d5833077748018a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >definitions fkr calculator. </p>
+<dl class="section author"><dt>Author</dt><dd>JakaasJai69 (<a href="#" onclick="location.href='mai'+'lto:'+'nam'+'de'+'omr'+'it'+'unj'+'ay'+'@gm'+'ai'+'l.c'+'om'; return false;">namde<span class="obfuscator">.nosp@m.</span>omri<span class="obfuscator">.nosp@m.</span>tunja<span class="obfuscator">.nosp@m.</span>y@gm<span class="obfuscator">.nosp@m.</span>ail.c<span class="obfuscator">.nosp@m.</span>om</a>) </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2024-07-13</dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2024 </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="main__Calculator_8cpp_source.html">main_Calculator.cpp</a>.</p>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="a95cf70b564de06240d5833077748018a" name="a95cf70b564de06240d5833077748018a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a95cf70b564de06240d5833077748018a">&#9670;&nbsp;</a></span>execCalculator()</h2>
 
@@ -119,7 +130,6 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Executes a simple calculator function. </p>
-<p >This function prompts the user to input two numbers and an operator, performs the specified arithmetic operation, and displays the result.</p>
 <p >The function performs the following steps:</p><ol type="1">
 <li>Logs a debug message indicating the function has been called.</li>
 <li>Prompts the user to input the first number.</li>
@@ -131,50 +141,51 @@ Functions</h2></td></tr>
 <dl class="section note"><dt>Note</dt><dd>The function handles division by zero by displaying an error message and returning 1 to indicate an error.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns 0 on successful execution, 1 if division by zero is attempted. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="main__Calculator_8cpp_source.html#l00026">26</a> of file <a class="el" href="main__Calculator_8cpp_source.html">main_Calculator.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   27</span>{</div>
-<div class="line"><span class="lineno">   28</span>  PLOGD &lt;&lt; <span class="stringliteral">&quot;[debug: execCalculator() is called.]\n&quot;</span>;</div>
-<div class="line"><span class="lineno">   29</span>  std::cout &lt;&lt; <span class="stringliteral">&quot;Input your Number: \n&quot;</span>;</div>
-<div class="line"><span class="lineno">   30</span>  <span class="keywordtype">double</span> firstInput{};</div>
-<div class="line"><span class="lineno">   31</span>  std::cin &gt;&gt; firstInput;</div>
-<div class="line"><span class="lineno">   32</span>  std::cout</div>
-<div class="line"><span class="lineno">   33</span>    &lt;&lt; <span class="stringliteral">&quot;Input your Operator( &#39;+&#39; , &#39;-&#39; , &#39;*&#39; or &#39;/&#39; ): \n&quot;</span>;</div>
-<div class="line"><span class="lineno">   34</span>  std::string inOperator;</div>
-<div class="line"><span class="lineno">   35</span>  std::cin &gt;&gt; inOperator;</div>
+<p class="definition">Definition at line <a class="el" href="main__Calculator_8cpp_source.html#l00033">33</a> of file <a class="el" href="main__Calculator_8cpp_source.html">main_Calculator.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   34</span>{</div>
+<div class="line"><span class="lineno">   35</span>  PLOGD &lt;&lt; <span class="stringliteral">&quot;[debug: execCalculator() is called.]\n&quot;</span>;</div>
 <div class="line"><span class="lineno">   36</span>  std::cout &lt;&lt; <span class="stringliteral">&quot;Input your Number: \n&quot;</span>;</div>
-<div class="line"><span class="lineno">   37</span>  <span class="keywordtype">double</span> nextInput{};</div>
-<div class="line"><span class="lineno">   38</span>  std::cin &gt;&gt; nextInput;</div>
-<div class="line"><span class="lineno">   39</span>  <span class="keywordtype">double</span> result{};</div>
-<div class="line"><span class="lineno">   40</span>  <span class="keywordflow">switch</span> (inOperator[0])</div>
-<div class="line"><span class="lineno">   41</span>  {</div>
-<div class="line"><span class="lineno">   42</span>  <span class="keywordflow">case</span> <span class="charliteral">&#39;+&#39;</span>:</div>
-<div class="line"><span class="lineno">   43</span>    result = firstInput + nextInput;</div>
-<div class="line"><span class="lineno">   44</span>    <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   45</span>  <span class="keywordflow">case</span> <span class="charliteral">&#39;-&#39;</span>:</div>
-<div class="line"><span class="lineno">   46</span>    result = firstInput - nextInput;</div>
-<div class="line"><span class="lineno">   47</span>    <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   48</span>  <span class="keywordflow">case</span> <span class="charliteral">&#39;*&#39;</span>:</div>
-<div class="line"><span class="lineno">   49</span>    result = firstInput * nextInput;</div>
-<div class="line"><span class="lineno">   50</span>    <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   51</span>  <span class="keywordflow">case</span> <span class="charliteral">&#39;/&#39;</span>:</div>
-<div class="line"><span class="lineno">   52</span>    <span class="keywordflow">if</span> (nextInput != 0)</div>
-<div class="line"><span class="lineno">   53</span>    {</div>
-<div class="line"><span class="lineno">   54</span>      result = firstInput / nextInput;</div>
-<div class="line"><span class="lineno">   55</span>      <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   56</span>    }</div>
-<div class="line"><span class="lineno">   57</span>    <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   58</span>    {</div>
-<div class="line"><span class="lineno">   59</span>      std::cout &lt;&lt; <span class="stringliteral">&quot;Denominator cannot be zero. \n&quot;</span>;</div>
-<div class="line"><span class="lineno">   60</span>      <span class="keywordflow">return</span> 1;</div>
-<div class="line"><span class="lineno">   61</span>    }</div>
-<div class="line"><span class="lineno">   62</span>  }</div>
-<div class="line"><span class="lineno">   63</span>  std::cout &lt;&lt; <span class="stringliteral">&quot;Your Output is: \n&quot;</span></div>
-<div class="line"><span class="lineno">   64</span>            &lt;&lt; firstInput &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; inOperator &lt;&lt; <span class="stringliteral">&quot; &quot;</span></div>
-<div class="line"><span class="lineno">   65</span>            &lt;&lt; nextInput &lt;&lt; <span class="stringliteral">&quot; = &quot;</span> &lt;&lt; result &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><span class="lineno">   66</span>  <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">   67</span>}</div>
+<div class="line"><span class="lineno">   37</span>  <span class="keywordtype">double</span> firstInput{}; <span class="comment">//stores first input.</span></div>
+<div class="line"><span class="lineno">   38</span>  std::cin &gt;&gt; firstInput;</div>
+<div class="line"><span class="lineno">   39</span> </div>
+<div class="line"><span class="lineno">   40</span>  std::cout</div>
+<div class="line"><span class="lineno">   41</span>    &lt;&lt; <span class="stringliteral">&quot;Input your Operator( &#39;+&#39; , &#39;-&#39; , &#39;*&#39; or &#39;/&#39; ): \n&quot;</span>;</div>
+<div class="line"><span class="lineno">   42</span>  std::string inOperator;</div>
+<div class="line"><span class="lineno">   43</span>  std::cin &gt;&gt; inOperator;</div>
+<div class="line"><span class="lineno">   44</span>  std::cout &lt;&lt; <span class="stringliteral">&quot;Input your Number: \n&quot;</span>;</div>
+<div class="line"><span class="lineno">   45</span>  <span class="keywordtype">double</span> nextInput{}; <span class="comment">//stores next input.</span></div>
+<div class="line"><span class="lineno">   46</span>  std::cin &gt;&gt; nextInput;</div>
+<div class="line"><span class="lineno">   47</span>  <span class="keywordtype">double</span> result{}; <span class="comment">//stores result.</span></div>
+<div class="line"><span class="lineno">   48</span>  <span class="keywordflow">switch</span> (inOperator[0])</div>
+<div class="line"><span class="lineno">   49</span>  {</div>
+<div class="line"><span class="lineno">   50</span>  <span class="keywordflow">case</span> <span class="charliteral">&#39;+&#39;</span>:</div>
+<div class="line"><span class="lineno">   51</span>    result = firstInput + nextInput;</div>
+<div class="line"><span class="lineno">   52</span>    <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   53</span>  <span class="keywordflow">case</span> <span class="charliteral">&#39;-&#39;</span>:</div>
+<div class="line"><span class="lineno">   54</span>    result = firstInput - nextInput;</div>
+<div class="line"><span class="lineno">   55</span>    <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   56</span>  <span class="keywordflow">case</span> <span class="charliteral">&#39;*&#39;</span>:</div>
+<div class="line"><span class="lineno">   57</span>    result = firstInput * nextInput;</div>
+<div class="line"><span class="lineno">   58</span>    <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   59</span>  <span class="keywordflow">case</span> <span class="charliteral">&#39;/&#39;</span>:</div>
+<div class="line"><span class="lineno">   60</span>    <span class="keywordflow">if</span> (nextInput != 0)</div>
+<div class="line"><span class="lineno">   61</span>    {</div>
+<div class="line"><span class="lineno">   62</span>      result = firstInput / nextInput;</div>
+<div class="line"><span class="lineno">   63</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   64</span>    }</div>
+<div class="line"><span class="lineno">   65</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   66</span>    {</div>
+<div class="line"><span class="lineno">   67</span>      std::cout &lt;&lt; <span class="stringliteral">&quot;Denominator cannot be zero. \n&quot;</span>;</div>
+<div class="line"><span class="lineno">   68</span>      <span class="keywordflow">return</span> 1;</div>
+<div class="line"><span class="lineno">   69</span>    }</div>
+<div class="line"><span class="lineno">   70</span>  }</div>
+<div class="line"><span class="lineno">   71</span>  std::cout &lt;&lt; <span class="stringliteral">&quot;Your Output is: \n&quot;</span></div>
+<div class="line"><span class="lineno">   72</span>            &lt;&lt; firstInput &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; inOperator &lt;&lt; <span class="stringliteral">&quot; &quot;</span></div>
+<div class="line"><span class="lineno">   73</span>            &lt;&lt; nextInput &lt;&lt; <span class="stringliteral">&quot; = &quot;</span> &lt;&lt; result &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   74</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">   75</span>}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="main__functions_8cpp_source.html#l00044">execFunction()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main__functions_8cpp_source.html#l00033">execFunction()</a>.</p>
 
 </div>
 </div>

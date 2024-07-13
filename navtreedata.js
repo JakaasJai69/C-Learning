@@ -25,7 +25,7 @@
 var NAVTREE =
 [
   [ "C-Learning", "index.html", [
-    [ "My Manaliual for C++ Learning", "index.html", [
+    [ "My Manali-ual for C++ Learning", "index.html", [
       [ "Table of Contents", "index.html#tableofcontents", null ],
       [ "Support", "index.html#support", null ],
       [ "Contributing", "index.html#contribution", null ],
@@ -34,10 +34,11 @@ var NAVTREE =
     ] ],
     [ "building and requirments", "building.html", [
       [ "A big and very long test header **( ͡° ͜ʖ ͡°)**", "building.html#test", [
-        [ "Requirments:", "building.html#requirments", null ],
+        [ "Requirments:", "building.html#requirements", null ],
         [ "Build Steps", "building.html#buildsteps", null ]
       ] ]
     ] ],
+    [ "Testing Mannual", "md_manual_Testing_index.html", null ],
     [ "Files", "files.html", [
       [ "File List", "files.html", "files_dup" ],
       [ "File Members", "globals.html", [
@@ -50,7 +51,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"building.html"
+"Common_8h.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

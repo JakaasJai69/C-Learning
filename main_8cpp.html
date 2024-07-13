@@ -24,7 +24,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="dest.jpg"/></td>
+  <td id="projectlogo"><img alt="Logo" src="Khopda.jpg"/></td>
   <td id="projectalign">
    <div id="projectname">C-Learning<span id="projectnumber">&#160;1.0</span>
    </div>
@@ -89,8 +89,11 @@ $(document).ready(function(){initNavTree('main_8cpp.html',''); initResizable(); 
   <div class="headertitle"><div class="title">main.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;Common.h&gt;</code><br />
-<code>#include &lt;main_functions.h&gt;</code><br />
+
+<p>Main file.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &lt;<a class="el" href="Common_8h_source.html">Common.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="main__functions_8h_source.html">main_functions.h</a>&gt;</code><br />
 </div>
 <p><a href="main_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -100,7 +103,15 @@ Functions</h2></td></tr>
 <tr class="memdesc:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The main entry point of the program.  <a href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">More...</a><br /></td></tr>
 <tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Main file. </p>
+<dl class="section author"><dt>Author</dt><dd>JakaasJai69 (<a href="#" onclick="location.href='mai'+'lto:'+'nam'+'de'+'omr'+'it'+'unj'+'ay'+'@gm'+'ai'+'l.c'+'om'; return false;">namde<span class="obfuscator">.nosp@m.</span>omri<span class="obfuscator">.nosp@m.</span>tunja<span class="obfuscator">.nosp@m.</span>y@gm<span class="obfuscator">.nosp@m.</span>ail.c<span class="obfuscator">.nosp@m.</span>om</a>) </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2024-07-13</dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2024 </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="ae66f6b31b5ad750f1fe042a706a4e3d4" name="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">&#9670;&nbsp;</a></span>main()</h2>
 
@@ -124,24 +135,31 @@ Functions</h2></td></tr>
 <li>The program flow is logged at debug level.</li>
 <li>The user is prompted to select a function, which is then executed.</li>
 </ul>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="main__functions_8cpp.html#a8d062b9c6230d3334285b1dea223b571" title="Executes the function corresponding to the provided execution code.">execFunction()</a> </dd>
+<dd>
+<a class="el" href="main__functions_8cpp.html#a94bcb9a5cb3c4a055684a050c01624db" title="Prompts the user to select a function and returns their choice.">selectFunction()</a></dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns 0 on successful execution. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00019">19</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   20</span>{</div>
-<div class="line"><span class="lineno">   21</span><span class="preprocessor">#ifdef DEBUG</span></div>
-<div class="line"><span class="lineno">   22</span>  plog::init(plog::debug, <span class="stringliteral">&quot;Logfile.txt&quot;</span>);</div>
-<div class="line"><span class="lineno">   23</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">   24</span><span class="preprocessor">#ifdef NDEBUG</span></div>
-<div class="line"><span class="lineno">   25</span>  plog::init(plog::none, <span class="stringliteral">&quot;Logfile.txt&quot;</span>);</div>
-<div class="line"><span class="lineno">   26</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">   27</span>  PLOGD &lt;&lt; <span class="stringliteral">&quot;[debug: main() is called.]\n&quot;</span>;</div>
-<div class="line"><span class="lineno">   28</span>  <a class="code hl_function" href="main__functions_8cpp.html#a8d062b9c6230d3334285b1dea223b571">execFunction</a>(<a class="code hl_function" href="main__functions_8cpp.html#a94bcb9a5cb3c4a055684a050c01624db">selectFunction</a>());</div>
-<div class="line"><span class="lineno">   29</span>  <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">   30</span>}</div>
-<div class="ttc" id="amain__functions_8cpp_html_a8d062b9c6230d3334285b1dea223b571"><div class="ttname"><a href="main__functions_8cpp.html#a8d062b9c6230d3334285b1dea223b571">execFunction</a></div><div class="ttdeci">int execFunction(int execCode)</div><div class="ttdoc">Executes the function corresponding to the provided execution code.</div><div class="ttdef"><b>Definition:</b> <a href="main__functions_8cpp_source.html#l00044">main_functions.cpp:44</a></div></div>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00033">33</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   34</span>{</div>
+<div class="line"><span class="lineno">   35</span><span class="preprocessor">  #ifdef DEBUG</span></div>
+<div class="line"><span class="lineno">   36</span>    plog::init(plog::debug, <span class="stringliteral">&quot;Logfile.txt&quot;</span>);</div>
+<div class="line"><span class="lineno">   37</span><span class="preprocessor">  #endif</span></div>
+<div class="line"><span class="lineno">   38</span><span class="preprocessor">  #ifdef NDEBUG</span></div>
+<div class="line"><span class="lineno">   39</span>    plog::init(plog::none, <span class="stringliteral">&quot;Logfile.txt&quot;</span>);</div>
+<div class="line"><span class="lineno">   40</span><span class="preprocessor">  #endif</span></div>
+<div class="line"><span class="lineno">   41</span> </div>
+<div class="line"><span class="lineno">   42</span>  PLOGD &lt;&lt; <span class="stringliteral">&quot;[debug: main() is called.]\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   43</span> </div>
+<div class="line"><span class="lineno">   44</span>  <span class="keywordtype">int</span> selectedFunction{<a class="code hl_function" href="main__functions_8cpp.html#a94bcb9a5cb3c4a055684a050c01624db">selectFunction</a>()}; <span class="comment">//stores the user selected function from terminal.</span></div>
+<div class="line"><span class="lineno">   45</span>  <a class="code hl_function" href="main__functions_8cpp.html#a8d062b9c6230d3334285b1dea223b571">execFunction</a>(selectedFunction);</div>
+<div class="line"><span class="lineno">   46</span> </div>
+<div class="line"><span class="lineno">   47</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">   48</span>}</div>
+<div class="ttc" id="amain__functions_8cpp_html_a8d062b9c6230d3334285b1dea223b571"><div class="ttname"><a href="main__functions_8cpp.html#a8d062b9c6230d3334285b1dea223b571">execFunction</a></div><div class="ttdeci">int execFunction(int execCode)</div><div class="ttdoc">Executes the function corresponding to the provided execution code.</div><div class="ttdef"><b>Definition:</b> <a href="main__functions_8cpp_source.html#l00033">main_functions.cpp:33</a></div></div>
 <div class="ttc" id="amain__functions_8cpp_html_a94bcb9a5cb3c4a055684a050c01624db"><div class="ttname"><a href="main__functions_8cpp.html#a94bcb9a5cb3c4a055684a050c01624db">selectFunction</a></div><div class="ttdeci">int selectFunction()</div><div class="ttdoc">Prompts the user to select a function and returns their choice.</div><div class="ttdef"><b>Definition:</b> <a href="main__functions_8cpp_source.html#l00020">main_functions.cpp:20</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="main__functions_8cpp_source.html#l00044">execFunction()</a>, and <a class="el" href="main__functions_8cpp_source.html#l00020">selectFunction()</a>.</p>
+<p class="reference">References <a class="el" href="main__functions_8cpp_source.html#l00033">execFunction()</a>, and <a class="el" href="main__functions_8cpp_source.html#l00020">selectFunction()</a>.</p>
 
 </div>
 </div>

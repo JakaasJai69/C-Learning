@@ -24,7 +24,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="dest.jpg"/></td>
+  <td id="projectlogo"><img alt="Logo" src="Khopda.jpg"/></td>
   <td id="projectalign">
    <div id="projectname">C-Learning<span id="projectnumber">&#160;1.0</span>
    </div>
@@ -89,19 +89,30 @@ $(document).ready(function(){initNavTree('main__Hello_8cpp.html',''); initResiza
   <div class="headertitle"><div class="title">main_Hello.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;Common.h&gt;</code><br />
+
+<p>Functions for Hello Program.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &lt;<a class="el" href="Common_8h_source.html">Common.h</a>&gt;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
-<code>#include &lt;main_Hello.h&gt;</code><br />
+<code>#include &lt;<a class="el" href="main__Hello_8h_source.html">main_Hello.h</a>&gt;</code><br />
 </div>
 <p><a href="main__Hello_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a9eb1fb9382aced9f2ac9b54f83c2010e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main__Hello_8cpp.html#a9eb1fb9382aced9f2ac9b54f83c2010e">execHello</a> ()</td></tr>
-<tr class="memdesc:a9eb1fb9382aced9f2ac9b54f83c2010e"><td class="mdescLeft">&#160;</td><td class="mdescRight">simple hello program whicb prints, well 'hello'.  <a href="main__Hello_8cpp.html#a9eb1fb9382aced9f2ac9b54f83c2010e">More...</a><br /></td></tr>
+<tr class="memdesc:a9eb1fb9382aced9f2ac9b54f83c2010e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes a simple "Hello, world!" program.  <a href="main__Hello_8cpp.html#a9eb1fb9382aced9f2ac9b54f83c2010e">More...</a><br /></td></tr>
 <tr class="separator:a9eb1fb9382aced9f2ac9b54f83c2010e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Functions for Hello Program. </p>
+<dl class="section author"><dt>Author</dt><dd>JakaasJai69 (<a href="#" onclick="location.href='mai'+'lto:'+'nam'+'de'+'omr'+'it'+'unj'+'ay'+'@gm'+'ai'+'l.c'+'om'; return false;">namde<span class="obfuscator">.nosp@m.</span>omri<span class="obfuscator">.nosp@m.</span>tunja<span class="obfuscator">.nosp@m.</span>y@gm<span class="obfuscator">.nosp@m.</span>ail.c<span class="obfuscator">.nosp@m.</span>om</a>) </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2024-07-13</dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2024 </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="main__Hello_8cpp_source.html">main_Hello.cpp</a>.</p>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="a9eb1fb9382aced9f2ac9b54f83c2010e" name="a9eb1fb9382aced9f2ac9b54f83c2010e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9eb1fb9382aced9f2ac9b54f83c2010e">&#9670;&nbsp;</a></span>execHello()</h2>
 
@@ -117,24 +128,21 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>simple hello program whicb prints, well 'hello'. </p>
-<dl class="section return"><dt>Returns</dt><dd>success code</dd></dl>
-<p>Executes a simple "Hello, world!" program.</p>
-<p >This function logs a debug message and prints "Hello, world!" to the console.</p>
+<p>Executes a simple "Hello, world!" program. </p>
 <p >The function performs two operations:</p><ol type="1">
-<li>Logs a debug message indicating that <a class="el" href="main__Hello_8cpp.html#a9eb1fb9382aced9f2ac9b54f83c2010e" title="simple hello program whicb prints, well &#39;hello&#39;.">execHello()</a> has been called.</li>
+<li>Logs a debug message indicating that <a class="el" href="main__Hello_8cpp.html#a9eb1fb9382aced9f2ac9b54f83c2010e" title="Executes a simple &quot;Hello, world!&quot; program.">execHello()</a> has been called.</li>
 <li>Prints "Hello, world!" to the standard output.</li>
 </ol>
 <dl class="section return"><dt>Returns</dt><dd>Always returns 0, indicating successful execution. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="main__Hello_8cpp_source.html#l00023">23</a> of file <a class="el" href="main__Hello_8cpp_source.html">main_Hello.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   24</span>{</div>
-<div class="line"><span class="lineno">   25</span>  PLOGD &lt;&lt; <span class="stringliteral">&quot;[debug: execHello() is called.]\n&quot;</span>;</div>
-<div class="line"><span class="lineno">   26</span>  std::cout &lt;&lt; <span class="stringliteral">&quot;Hello, world!\n&quot;</span>;</div>
-<div class="line"><span class="lineno">   27</span>  <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">   28</span>}</div>
+<p class="definition">Definition at line <a class="el" href="main__Hello_8cpp_source.html#l00024">24</a> of file <a class="el" href="main__Hello_8cpp_source.html">main_Hello.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   25</span>{</div>
+<div class="line"><span class="lineno">   26</span>  PLOGD &lt;&lt; <span class="stringliteral">&quot;[debug: execHello() is called.]\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   27</span>  std::cout &lt;&lt; <span class="stringliteral">&quot;Hello, world!\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   28</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">   29</span>}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="main__functions_8cpp_source.html#l00044">execFunction()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main__functions_8cpp_source.html#l00033">execFunction()</a>.</p>
 
 </div>
 </div>

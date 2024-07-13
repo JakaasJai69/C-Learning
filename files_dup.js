@@ -1,5 +1,6 @@
 var files_dup =
 [
-    [ "mannual", "dir_e90541917dd8f6462fc9e97cb284e49d.html", "dir_e90541917dd8f6462fc9e97cb284e49d" ],
+    [ "includes", "dir_09e761304027c904456130627fd4dcf5.html", "dir_09e761304027c904456130627fd4dcf5" ],
+    [ "manual", "dir_326cfef2590dc603900f438a2dc715be.html", "dir_326cfef2590dc603900f438a2dc715be" ],
     [ "src", "dir_68267d1309a1af8e8297ef4c3efbcdba.html", "dir_68267d1309a1af8e8297ef4c3efbcdba" ]
 ];
