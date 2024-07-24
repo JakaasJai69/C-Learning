@@ -185,6 +185,7 @@
   "Jakaas",
   "treesitter"
 ],
+"cmake.automaticReconfigure": false,
 
 
 }

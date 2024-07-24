@@ -12,17 +12,17 @@
 // This program prints the C++ language standard your compiler is currently using
 // Freely redistributable, courtesy of learncpp.com (https://www.learncpp.com/cpp-tutorial/what-language-standard-is-my-compiler-using/)
 
-#include <Common.h>
 #include <iostream>
-#include <main_LanguageStandardCheck.h>
+#include <Common.h>
+#include <lib_LanguageStandardCheck.h>
 
 /**
  * @return The C++ standard code as a long integer, or -1 if unable to determine.
  */
 long getCPPStandard()
 {
+  PLOGD << "[debug: getCPPStandard() gets executed.]";
 
-  PLOGD << "[debug: getCPPStandard() is called.]\n";
 
   // Visual Studio is non-conforming in support for __cplusplus (unless you set a specific compiler flag, which you probably haven't)
   // In Visual Studio 2015 or newer we can use _MSVC_LANG instead
@@ -44,9 +44,7 @@ long getCPPStandard()
 int execLanguageStandardCheck()
 {
 
-  PLOGD
-    << "[debug: execLanguageStandardCheck() is called.]\n";
-
+  PLOGD << "[debug: execLanguageStandardCheck() gets executed.]";
 
   const int numStandards = 7;
   // The C++26 stdCode is a placeholder since the exact code won't be determined until the standard is finalized

@@ -11,7 +11,7 @@
 
 #include <Common.h>
 #include <iostream>
-#include <main_Calculator.h>
+#include <lib_Calculator.h>
 #include <string>
 
 /**

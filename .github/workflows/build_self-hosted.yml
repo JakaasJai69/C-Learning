@@ -36,7 +36,9 @@ jobs:
 
       - name: Configure CMake
         working-directory: ${{github.workspace}}/build
-        run: cmake ..
+        run: |
+          echo "configuring project"
+          cmake ..
 
       - name: Build
         working-directory: ${{github.workspace}}/build
@@ -44,7 +46,10 @@ jobs:
           # Add your build commands here
           echo "Building program version ${{ env.VERSION }}"
           cmake --build .
-          mv main.out main-debian12_aarch64_${{ env.VERSION }}.out
+          cpack
+          mkdir out
+          mv C-Learning--Linux.tar.gz out/C-Learning-debian12_aarch64_${{ env.VERSION }}.tar.gz
+          mv src/C-Learning out/C-Learning-debian12_aarch64_${{ env.VERSION }}
 
       - name: Create Release
         id: create_release
@@ -52,17 +57,29 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ env.VERSION }}
+          tag_name: VERSION
           release_name: Release ${{ env.VERSION }}
           draft: false
           prerelease: false
 
-      - name: Upload Release Asset
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # - name: Upload Release Asset
+      #   uses: actions/upload-release-asset@v1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   with:
+      #     upload_url: ${{ steps.create_release.outputs.upload_url }}
+      #     asset_path: build/out/*
+      #     asset_name: C-Learning-debian12_aarch64_${{ env.VERSION }}.tar.gz
+      #     asset_content_type: application/octet-stream
+
+      - name: Release Build
+        uses: softprops/action-gh-release@v2
+        if: startsWith(github.ref, 'refs/tags/')
         with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: main-debian12_aarch64_${{ env.VERSION }}.out
-          asset_name: your-program-${{ env.VERSION }}
-          asset_content_type: application/octet-stream
+          draft: false
+          generate_release_notes: true
+          append_body: true
+          body: "Let's see hmm.  *fingers crossed*"
+          name: Test-Releases-${{ env.VERSION }}
+          files: |
+            build/out/*

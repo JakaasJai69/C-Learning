@@ -11,9 +11,9 @@
 
 #include <Common.h>
 #include <iostream>
-#include <main_Calculator.h>
-#include <main_Hello.h>
-#include <main_LanguageStandardCheck.h>
+#include <lib_Calculator.h>
+#include <lib_Hello.h>
+#include <lib_LanguageStandardCheck.h>
 #include <main_functions.h>
 
 
