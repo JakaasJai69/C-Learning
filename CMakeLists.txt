@@ -1,3 +1,6 @@
+#for clangd compilation database
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON CACHE INTERNAL "")
+
 #set req
 cmake_minimum_required(VERSION 3.10)
 
@@ -10,9 +13,6 @@ add_subdirectory(src)
 #binary output
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG ${CMAKE_BINARY_DIR})
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE ${CMAKE_BINARY_DIR})
-
-#for clangd compilation database
-set(CMAKE_EXPORT_COMPILE_COMMANDS ON CACHE INTERNAL "")
 
 
 set(CMAKE_CXX_STANDARD 23)

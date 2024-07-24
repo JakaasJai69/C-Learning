@@ -33,35 +33,73 @@ jobs:
 
       - name: Install dependencies
         run: echo 1 | sudo -S apt-get install -q -y build-essential clang cmake
-
-      - name: Configure CMake
-        working-directory: ${{github.workspace}}/build
-        run: |
-          echo "configuring project"
-          cmake ..
-
-      - name: Build
+      - name: Configure and Build
         working-directory: ${{github.workspace}}/build
         run: |
           # Add your build commands here
+          echo "configuring project"
+          cmake ..
           echo "Building program version ${{ env.VERSION }}"
           cmake --build .
           cpack
           mkdir out
           mv C-Learning--Linux.tar.gz out/C-Learning-debian12_aarch64_${{ env.VERSION }}.tar.gz
           mv src/C-Learning out/C-Learning-debian12_aarch64_${{ env.VERSION }}
+
+      # - name: Release Build
+      #   uses: softprops/action-gh-release@v2
+      #   if: startsWith(github.ref, 'refs/tags/')
+      #   with:
+      #     draft: false
+      #     generate_release_notes: true
+      #     append_body: true
+      #     body: "Let's see hmm.  *fingers crossed*"
+      #     name: Test-Releases-${{ env.VERSION }}
+      #     files: |
+      #       build/out/*
+      #
+      - name: Archive source code
+        run: git archive --format=zip HEAD -o source-code.zip
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-
-      - name: Release Build
-        uses: softprops/action-gh-release@v2
-        if: startsWith(github.ref, 'refs/tags/')
         with:
+          tag_name: ${{ env.VERSION }}
+          release_name: Release ${{ env.VERSION }}
           draft: false
-          generate_release_notes: true
-          append_body: true
-          body: "Let's see hmm.  *fingers crossed*"
-          name: Test-Releases-${{ env.VERSION }}
-          files: |
-            build/out/*
+          prerelease: false
+
+      - name: Upload Release Asset (tar.gz)
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ${{github.workspace}}/build/out/C-Learning-debian12_aarch64_${{ env.VERSION }}.tar.gz
+
+          asset_name: C-Learning-debian12_aarch64_${{ env.VERSION }}.tar.gz
+          asset_content_type: application/gzip
+
+      - name: Upload Release Asset (executable)
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ${{github.workspace}}/build/out/C-Learning-debian12_aarch64_${{ env.VERSION }}
+          asset_name: C-Learning-debian12_aarch64_${{ env.VERSION }}
+          asset_content_type: application/executable
+
+
+      - name: Upload Source Code
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ${{github.workspace}}/source-code.zip
+          asset_name: source-code-${{ env.VERSION }}.zip
+          asset_content_type: application/zip
