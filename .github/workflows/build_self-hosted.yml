@@ -50,27 +50,9 @@ jobs:
           mkdir out
           mv C-Learning--Linux.tar.gz out/C-Learning-debian12_aarch64_${{ env.VERSION }}.tar.gz
           mv src/C-Learning out/C-Learning-debian12_aarch64_${{ env.VERSION }}
-
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: VERSION
-          release_name: Release ${{ env.VERSION }}
-          draft: false
-          prerelease: false
 
-      # - name: Upload Release Asset
-      #   uses: actions/upload-release-asset@v1
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #   with:
-      #     upload_url: ${{ steps.create_release.outputs.upload_url }}
-      #     asset_path: build/out/*
-      #     asset_name: C-Learning-debian12_aarch64_${{ env.VERSION }}.tar.gz
-      #     asset_content_type: application/octet-stream
 
       - name: Release Build
         uses: softprops/action-gh-release@v2
