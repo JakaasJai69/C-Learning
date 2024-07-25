@@ -7,6 +7,10 @@ on:
         description: 'Version name for the release (leave empty to use latest tag)'
         required: false
         type: string
+      notes:
+        description: 'Anything you want to add to release notes'
+        required: false
+        type: string
 
 jobs:
   release:
@@ -27,6 +31,7 @@ jobs:
             echo "Using provided version"
             echo "VERSION=${{ github.event.inputs.version }}" >> $GITHUB_ENV
           fi
+
 
       - name: Create build directory
         run: mkdir build
@@ -69,6 +74,10 @@ jobs:
         with:
           tag_name: ${{ env.VERSION }}
           release_name: Release ${{ env.VERSION }}
+          body: |
+            ${{ github.event.inputs.notes }}
+
+          This is an automated release for version ${{ env.VERSION }}. Have fun Guys. : )
           draft: false
           prerelease: false
 
