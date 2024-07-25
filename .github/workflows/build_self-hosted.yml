@@ -11,6 +11,10 @@ on:
         description: 'Anything you want to add to release notes'
         required: false
         type: string
+      draft:
+        description: 'Create a draft release.'
+        required: true
+        type: boolean
 
 jobs:
   release:
@@ -75,10 +79,10 @@ jobs:
           tag_name: ${{ env.VERSION }}
           release_name: Release ${{ env.VERSION }}
           body: |
-            ${{ github.event.inputs.notes }}
+            ${{ github.event.inputs.notes != '' && github.event.inputs.notes || 'No additional release notes provided.' }}
 
           This is an automated release for version ${{ env.VERSION }}. Have fun Guys. : )
-          draft: false
+          draft: ${{ github.event.inputs.draft }}
           prerelease: false
 
       - name: Upload Release Asset (tar.gz)
