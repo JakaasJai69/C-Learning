@@ -89,8 +89,11 @@ jobs:
           tag_name: ${{ env.VERSION }}
           release_name: Release ${{ env.VERSION }}
           body: |
-            ${{ github.event.inputs.notes != '' && format('### Personal Notes:{0}{0}{1}{0}', char(10), github.event.inputs.notes) || '' }}
+            ${{ github.event.inputs.notes != '' && format('### Personal Notes:
 
+            {0}
+
+            ', github.event.inputs.notes) || '' }}
             ${{ steps.generate_release_notes.outputs.notes }}
 
           draft: ${{ github.event.inputs.draft }}
