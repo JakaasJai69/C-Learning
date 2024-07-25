@@ -70,6 +70,16 @@ jobs:
       - name: Archive source code
         run: git archive --format=zip HEAD -o source-code.zip
 
+      - name: Generate Release Notes
+        id: generate_release_notes
+        uses: release-drafter/release-drafter@v5
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          config-name: release-drafter.yml
+          disable-autolabeler: true
+          version: ${{ env.VERSION }}
+
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -79,11 +89,13 @@ jobs:
           tag_name: ${{ env.VERSION }}
           release_name: Release ${{ env.VERSION }}
           body: |
-            ${{ github.event.inputs.notes != '' && github.event.inputs.notes || 'No additional release notes provided.' }}
+            ${{ github.event.inputs.notes != '' && format('### Personal Notes:{0}{0}{1}{0}', char(10), github.event.inputs.notes) || '' }}
 
-          This is an automated release for version ${{ env.VERSION }}. Have fun Guys. : )
+            ${{ steps.generate_release_notes.outputs.notes }}
+
           draft: ${{ github.event.inputs.draft }}
           prerelease: false
+          generate_release_notes: true
 
       - name: Upload Release Asset (tar.gz)
         uses: actions/upload-release-asset@v1
